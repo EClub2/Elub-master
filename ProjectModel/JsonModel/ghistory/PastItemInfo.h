@@ -17,7 +17,7 @@
 @interface PastItemInfo : JSONModel
 @property(nonatomic,strong)NSString *gid;
 @property(nonatomic,strong)NSString *name;
-@property(nonatomic,strong)NSString *intro;
+@property(nonatomic,strong)NSString<Optional> *intro;
 @property(nonatomic,strong)NSString *price;
 @property(nonatomic,strong)NSString *discount;
 @property(nonatomic,strong)NSString *picture;

@@ -28,6 +28,7 @@
 -(NSNumber *)robWithMid:(NSString *)mid andSid:(NSString *)sid andGid:(NSString *)gid{
     
     NSString *urlString = [NSString stringWithFormat:RobActionURL,mid,sid,gid];
+    NSLog(@"%@",urlString);
     NSDictionary *result = [InternetRequest loadDataWithUrlString:urlString];
     NSNumber *status = (NSNumber *)[result objectForKey:@"status"];
     return status;
