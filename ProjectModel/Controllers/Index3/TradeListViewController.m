@@ -82,7 +82,7 @@
 - (void)footerRereshing
 {
     page++;
-    NSString *pageString = [NSString stringWithFormat:@"%d",page];    
+    NSString *pageString = [NSString stringWithFormat:@"%ld",(long)page];    
     UserDefaults *userDefaults = [[UserDefaults alloc] init];
     UserModel *userModel = [userDefaults userModel];
     NSString *urlString = [NSString stringWithFormat:AmountURL,userModel.mid,pageString];

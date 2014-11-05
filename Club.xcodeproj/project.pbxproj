@@ -163,6 +163,9 @@
 		332F551919B1BF8600333C4A /* Mhistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 332F551819B1BF8600333C4A /* Mhistory.m */; };
 		332F551D19B1CD3C00333C4A /* Ghistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 332F551C19B1CD3C00333C4A /* Ghistory.m */; };
 		332F552019B1CE2C00333C4A /* PastItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 332F551F19B1CE2C00333C4A /* PastItemInfo.m */; };
+		33537B631A0A008900AF0AD6 /* AppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33537B621A0A008900AF0AD6 /* AppViewController.m */; };
+		33537B651A0A02BA00AF0AD6 /* app_load.png in Resources */ = {isa = PBXBuildFile; fileRef = 33537B641A0A02BA00AF0AD6 /* app_load.png */; };
+		33537B671A0A03E900AF0AD6 /* 二维码.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 33537B661A0A03E900AF0AD6 /* 二维码.jpg */; };
 		335D22C919EE42FD00EB99B5 /* Groups.m in Sources */ = {isa = PBXBuildFile; fileRef = 335D22C819EE42FD00EB99B5 /* Groups.m */; };
 		335D22CE19EE434000EB99B5 /* buy.png in Resources */ = {isa = PBXBuildFile; fileRef = 335D22CA19EE434000EB99B5 /* buy.png */; };
 		335D22CF19EE434000EB99B5 /* miao.png in Resources */ = {isa = PBXBuildFile; fileRef = 335D22CB19EE434000EB99B5 /* miao.png */; };
@@ -468,6 +471,10 @@
 		332F551C19B1CD3C00333C4A /* Ghistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ghistory.m; sourceTree = "<group>"; };
 		332F551E19B1CE2C00333C4A /* PastItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PastItemInfo.h; sourceTree = "<group>"; };
 		332F551F19B1CE2C00333C4A /* PastItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastItemInfo.m; sourceTree = "<group>"; };
+		33537B611A0A008900AF0AD6 /* AppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppViewController.h; sourceTree = "<group>"; };
+		33537B621A0A008900AF0AD6 /* AppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppViewController.m; sourceTree = "<group>"; };
+		33537B641A0A02BA00AF0AD6 /* app_load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_load.png; sourceTree = "<group>"; };
+		33537B661A0A03E900AF0AD6 /* 二维码.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "二维码.jpg"; sourceTree = "<group>"; };
 		335D22C719EE42FD00EB99B5 /* Groups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Groups.h; sourceTree = "<group>"; };
 		335D22C819EE42FD00EB99B5 /* Groups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Groups.m; sourceTree = "<group>"; };
 		335D22CA19EE434000EB99B5 /* buy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buy.png; sourceTree = "<group>"; };
@@ -652,6 +659,8 @@
 				2207A70319B2EC6E0067B00C /* TradeListViewController.m */,
 				2272409A19B33DCD005210B2 /* MyOrderViewController.h */,
 				2272409B19B33DCD005210B2 /* MyOrderViewController.m */,
+				33537B611A0A008900AF0AD6 /* AppViewController.h */,
+				33537B621A0A008900AF0AD6 /* AppViewController.m */,
 				22156BF719B4269100D0EEB6 /* TradeOrderDetailViewController.h */,
 				22156BF819B4269100D0EEB6 /* TradeOrderDetailViewController.m */,
 				8FA1698F1A0520A1002DE009 /* Index3.storyboard */,
@@ -854,10 +863,12 @@
 			children = (
 				33E7CFAD19F79AE200D49EA6 /* killsmall2.png */,
 				33E7CF9E19F7933000D49EA6 /* now_clock.png */,
+				33537B661A0A03E900AF0AD6 /* 二维码.jpg */,
 				33E7CF9C19F7921E00D49EA6 /* future_clock.png */,
 				33E7CF9A19F7911600D49EA6 /* finish_kill_bg.png */,
 				335D22DF19EE5C6100EB99B5 /* naozhong_img.png */,
 				335D22DD19EE5C5900EB99B5 /* all_man_img.png */,
+				33537B641A0A02BA00AF0AD6 /* app_load.png */,
 				335D22DB19EE594200EB99B5 /* now_kill_bg.png */,
 				335D22CA19EE434000EB99B5 /* buy.png */,
 				335D22CB19EE434000EB99B5 /* miao.png */,
@@ -1355,6 +1366,7 @@
 				22F96DA319B57B7900A783B3 /* mycard_front.png in Resources */,
 				223E97D019B4C160005AF6A3 /* SubMenuCell.xib in Resources */,
 				22156C0219B44BA400D0EEB6 /* logo.png in Resources */,
+				33537B671A0A03E900AF0AD6 /* 二维码.jpg in Resources */,
 				222514FA199D922D003DCAC1 /* main_me_light@2x.png in Resources */,
 				223505571998CEEE0026B92F /* carota.jpg in Resources */,
 				22CFAEA51999C72F00BBD914 /* delete_nomal.png in Resources */,
@@ -1393,6 +1405,7 @@
 				22CFAE8A1999ABE200BBD914 /* qr_code.png in Resources */,
 				22CFAE8C1999ABEB00BBD914 /* return_suggest.png in Resources */,
 				222514F4199D914E003DCAC1 /* main_community_light@2x.png in Resources */,
+				33537B651A0A02BA00AF0AD6 /* app_load.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1550,6 +1563,7 @@
 				2267B497199A14D400FA9FED /* MenuCollectionCell.m in Sources */,
 				22F1E54719A0B69100E66885 /* DatasTableViewController.m in Sources */,
 				335D22C919EE42FD00EB99B5 /* Groups.m in Sources */,
+				33537B631A0A008900AF0AD6 /* AppViewController.m in Sources */,
 				227240CE19B352F9005210B2 /* ChooseAreaService.m in Sources */,
 				2267B49B199A14D400FA9FED /* PurchaseCarItemCell.m in Sources */,
 				224B35471995DD11009523F6 /* Index0ViewController.m in Sources */,
@@ -1649,7 +1663,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -1681,7 +1695,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
