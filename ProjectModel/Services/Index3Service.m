@@ -16,6 +16,7 @@
 #import "UserDefaults.h"
 #import "UserModel.h"
 #import "MyOrderViewController.h"
+#import "AppViewController.h"
 @implementation Index3Service
 
 /*
@@ -87,6 +88,14 @@
     QRCodeViewController *qrCodeViewController = [viewController.storyboard instantiateViewControllerWithIdentifier:@"QRCodeViewController"];
     qrCodeViewController.hidesBottomBarWhenPushed = YES;
     [viewController.navigationController pushViewController:qrCodeViewController animated:YES];
+}
+/*
+    应用推荐
+ */
+-(void)presentAppViewControllerOnViewController:(UIViewController *)viewController{
+   AppViewController *appViewController = [viewController.storyboard instantiateViewControllerWithIdentifier:@"AppViewController"];
+    appViewController.hidesBottomBarWhenPushed = YES;
+    [viewController.navigationController pushViewController:appViewController animated:YES];
 }
 
 /*

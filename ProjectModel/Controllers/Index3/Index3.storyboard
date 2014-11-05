@@ -1003,7 +1003,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nu4-4P-5yw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-84" y="838"/>
+            <point key="canvasLocation" x="85.5" y="738"/>
         </scene>
         <!--My Order View Controller-->
         <scene sceneID="uqh-G6-6OK">
@@ -1341,6 +1341,13 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Er-dQ-6Ml">
+                                                    <rect key="frame" x="225" y="47" width="90" height="1"/>
+                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="-4" y="62" width="8" height="86"/>
+                                                    </variation>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="团购份数：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDd-jW-9Jx">
                                                     <rect key="frame" x="123" y="87" width="60" height="21"/>
                                                     <constraints>
@@ -1622,6 +1629,8 @@
                                                 <constraint firstItem="Bdc-a8-p7S" firstAttribute="top" secondItem="Phg-rv-49s" secondAttribute="topMargin" id="bfs-e0-sce"/>
                                                 <constraint firstItem="QRO-7m-lD7" firstAttribute="top" secondItem="Phg-rv-49s" secondAttribute="topMargin" constant="61" id="hjS-7J-xMj"/>
                                                 <constraint firstItem="C6P-y2-8ai" firstAttribute="top" secondItem="QRO-7m-lD7" secondAttribute="top" id="juX-8l-w8z"/>
+                                                <constraint firstItem="Bdc-a8-p7S" firstAttribute="centerY" secondItem="Phg-rv-49s" secondAttribute="centerY" id="kXt-qQ-sGz"/>
+                                                <constraint firstItem="Bdc-a8-p7S" firstAttribute="top" secondItem="hCR-Ba-awI" secondAttribute="top" id="qpx-8x-EOE"/>
                                                 <constraint firstItem="eUi-Vg-geA" firstAttribute="leading" secondItem="hCR-Ba-awI" secondAttribute="leading" id="uSM-aH-OTv"/>
                                                 <constraint firstItem="hCR-Ba-awI" firstAttribute="top" secondItem="Phg-rv-49s" secondAttribute="topMargin" id="wUr-AI-xUW"/>
                                             </constraints>
@@ -1632,6 +1641,8 @@
                                                     <exclude reference="Kon-t0-m2i"/>
                                                     <exclude reference="RaQ-Fe-MWg"/>
                                                     <exclude reference="bfs-e0-sce"/>
+                                                    <exclude reference="kXt-qQ-sGz"/>
+                                                    <exclude reference="qpx-8x-EOE"/>
                                                     <exclude reference="3uK-G7-6tj"/>
                                                     <exclude reference="wUr-AI-xUW"/>
                                                     <exclude reference="Ava-Eo-Hnu"/>
@@ -1648,10 +1659,10 @@
                                             <variation key="widthClass=compact">
                                                 <mask key="constraints">
                                                     <include reference="1NJ-Bo-vi6"/>
-                                                    <include reference="9sM-6n-DRY"/>
-                                                    <include reference="Kon-t0-m2i"/>
                                                     <exclude reference="RaQ-Fe-MWg"/>
                                                     <exclude reference="bfs-e0-sce"/>
+                                                    <include reference="kXt-qQ-sGz"/>
+                                                    <include reference="qpx-8x-EOE"/>
                                                     <include reference="3uK-G7-6tj"/>
                                                     <include reference="wUr-AI-xUW"/>
                                                     <include reference="Ava-Eo-Hnu"/>
@@ -2126,10 +2137,101 @@
             </objects>
             <point key="canvasLocation" x="-55.5" y="-748"/>
         </scene>
+        <!--AppViewController-->
+        <scene sceneID="qkO-pp-3oO">
+            <objects>
+                <viewController storyboardIdentifier="AppViewController" id="ms5-H9-Gdf" userLabel="AppViewController" customClass="AppViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oXq-BK-DsV"/>
+                        <viewControllerLayoutGuide type="bottom" id="D9G-Wk-qeJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZaV-VN-Mer">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫一扫，推荐给你的朋友吧！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHQ-Dd-btN">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="pl2-xC-EXC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="pl2-xC-EXC"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="pl2-xC-EXC"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="二维码.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="nON-ea-rj7">
+                                <rect key="frame" x="16" y="92" width="288" height="264"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="VdO-3l-Jjy"/>
+                                    <constraint firstAttribute="height" constant="300" id="efz-pR-gOR"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="VdO-3l-Jjy"/>
+                                        <exclude reference="efz-pR-gOR"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="VdO-3l-Jjy"/>
+                                        <include reference="efz-pR-gOR"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gHQ-Dd-btN" firstAttribute="top" secondItem="oXq-BK-DsV" secondAttribute="bottom" constant="8" id="1av-K8-6hC"/>
+                            <constraint firstItem="nON-ea-rj7" firstAttribute="top" secondItem="gHQ-Dd-btN" secondAttribute="bottom" constant="8" id="Gfi-BS-JLy"/>
+                            <constraint firstItem="gHQ-Dd-btN" firstAttribute="trailing" secondItem="ZaV-VN-Mer" secondAttribute="trailingMargin" id="X2k-8a-hda"/>
+                            <constraint firstItem="gHQ-Dd-btN" firstAttribute="leading" secondItem="ZaV-VN-Mer" secondAttribute="leadingMargin" id="Z5O-1Y-8Vj"/>
+                            <constraint firstAttribute="centerX" secondItem="nON-ea-rj7" secondAttribute="centerX" id="Zjr-RT-eLQ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="gHQ-Dd-btN"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="1av-K8-6hC"/>
+                                <exclude reference="X2k-8a-hda"/>
+                                <exclude reference="Z5O-1Y-8Vj"/>
+                                <exclude reference="Gfi-BS-JLy"/>
+                                <exclude reference="Zjr-RT-eLQ"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="gHQ-Dd-btN"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="1av-K8-6hC"/>
+                                <include reference="X2k-8a-hda"/>
+                                <include reference="Z5O-1Y-8Vj"/>
+                                <include reference="Gfi-BS-JLy"/>
+                                <include reference="Zjr-RT-eLQ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="应用推荐" id="1W8-1H-Sgh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uvG-Nf-zLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-688.5" y="738"/>
+        </scene>
     </scenes>
     <resources>
         <image name="main_me.png" width="28" height="28"/>
         <image name="mycard_front.png" width="480" height="302"/>
         <image name="userIcon.jpg" width="69" height="65"/>
+        <image name="二维码.jpg" width="330" height="327"/>
     </resources>
 </document>

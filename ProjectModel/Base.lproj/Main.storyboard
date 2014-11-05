@@ -309,7 +309,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1，系统每天赠送5次抽奖机会" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abo-Hb-WbK">
-                                <rect key="frame" x="20" y="82" width="223.5" height="21"/>
+                                <rect key="frame" x="20" y="82" width="224" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="tQv-TV-DFT"/>
                                 </constraints>
@@ -375,7 +375,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pxr-XW-wfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="519" y="1282"/>
+            <point key="canvasLocation" x="537" y="978"/>
         </scene>
         <!--index1-->
         <scene sceneID="m9I-QY-PxS">

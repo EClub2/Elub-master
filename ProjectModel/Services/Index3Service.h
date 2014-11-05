@@ -15,4 +15,5 @@
 -(void)presentMyWalletViewControllerOnViewController:(UIViewController *)viewController;
 -(void)presentMyOrderViewControllerOnViewController:(UIViewController *)viewController;
 -(void)callInViewController:(Index3ViewController *)viewController;
+-(void)presentAppViewControllerOnViewController:(UIViewController *)viewController;
 @end
