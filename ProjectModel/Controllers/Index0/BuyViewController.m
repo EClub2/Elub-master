@@ -79,7 +79,7 @@
     self.goods = [NSMutableArray arrayWithArray:userModel.goods];
     
     buyService = [[BuyService alloc] init];
-//    [self setupRefresh];
+    [self setupRefresh];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
