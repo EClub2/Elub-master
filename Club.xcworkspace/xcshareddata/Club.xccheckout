@@ -28,6 +28,11 @@
 		<key>BD8BF37D48E52F4702C53EB99DD2E9DA97A1ABFC</key>
 		<string>../../Club3-master</string>
 	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</key>
+		<string>https://github.com/MartinLi841538513/Club2</string>
+	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:EClub2/Elub-master.git</string>
 	<key>IDESourceControlProjectVersion</key>

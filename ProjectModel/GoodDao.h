@@ -7,9 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GoodModel.h"
 @interface GoodDao : NSObject
 -(NSDictionary *)goodsBySid:(NSString *)sid andGtypeid:(NSString *)gtypeid andPage:(NSString *)page;
--(GoodModel *)modelWithDict:(NSDictionary *)dict;
 -(BOOL)addToPurchaseCarWithMid:(NSString *)mid andGid:(NSString *)gid andNum:(NSString *)num;
 @end

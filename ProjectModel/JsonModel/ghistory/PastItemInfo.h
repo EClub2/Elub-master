@@ -9,9 +9,6 @@
 #import "JSONModel.h"
 
 @protocol PastItemInfo <NSObject>
-
-
-
 @end
 
 @interface PastItemInfo : JSONModel

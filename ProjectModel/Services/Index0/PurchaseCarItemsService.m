@@ -61,9 +61,9 @@
 
 -(void)setViewController:(PurchaseCarItemsViewController *)viewController andCell:(PurchaseCarItemCell *)cell atRow:(NSInteger)row andNum:(NSInteger)num andGoods:(NSMutableArray *)goods{
     GoodForSubmit *good = [goods objectAtIndex:row];
-    good.num = [NSString stringWithFormat:@"%d",num];
+    good.num = [NSString stringWithFormat:@"%ld",(long)num];
     good.total = [NSString stringWithFormat:@"%0.1f",num*[good.discount floatValue]];
-    cell.count.text = [NSString stringWithFormat:@"%d",num];
+    cell.count.text = [NSString stringWithFormat:@"%ld",(long)num];
     cell.totalPrice.text = [NSString stringWithFormat:@"%0.1f",num*[good.discount floatValue]];
     viewController.totalPrice.text = [NSString stringWithFormat:@"总额:￥%0.1f",[self totalPriceDatas:goods]];
 }

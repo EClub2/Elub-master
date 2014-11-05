@@ -39,7 +39,7 @@
     self.title = @"交易记录";
     page = 1;
     datas = [[NSMutableArray alloc] initWithArray:self.items];
-    [self setupRefresh];
+//    [self setupRefresh];
 }
 
 - (void)didReceiveMemoryWarning

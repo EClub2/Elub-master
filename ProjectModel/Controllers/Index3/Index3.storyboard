@@ -1618,9 +1618,11 @@
                                                 <constraint firstItem="Bdc-a8-p7S" firstAttribute="leading" secondItem="Phg-rv-49s" secondAttribute="leadingMargin" id="1NJ-Bo-vi6"/>
                                                 <constraint firstItem="hCR-Ba-awI" firstAttribute="leading" secondItem="Bdc-a8-p7S" secondAttribute="trailing" constant="8" id="3uK-G7-6tj"/>
                                                 <constraint firstItem="QRO-7m-lD7" firstAttribute="trailing" secondItem="Phg-rv-49s" secondAttribute="trailingMargin" id="6Iy-75-3iR"/>
+                                                <constraint firstItem="Bdc-a8-p7S" firstAttribute="top" secondItem="hCR-Ba-awI" secondAttribute="top" id="9sM-6n-DRY"/>
                                                 <constraint firstItem="eUi-Vg-geA" firstAttribute="top" secondItem="hCR-Ba-awI" secondAttribute="bottom" constant="8" symbolic="YES" id="Ava-Eo-Hnu"/>
                                                 <constraint firstItem="C6P-y2-8ai" firstAttribute="bottom" secondItem="Bdc-a8-p7S" secondAttribute="bottom" id="DD2-vN-47q"/>
                                                 <constraint firstItem="C6P-y2-8ai" firstAttribute="top" secondItem="eUi-Vg-geA" secondAttribute="bottom" constant="11" id="EHt-bx-PAr"/>
+                                                <constraint firstItem="Bdc-a8-p7S" firstAttribute="centerY" secondItem="Phg-rv-49s" secondAttribute="centerY" id="Kon-t0-m2i"/>
                                                 <constraint firstItem="C6P-y2-8ai" firstAttribute="bottom" secondItem="QRO-7m-lD7" secondAttribute="bottom" id="NsS-YW-qXj"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Bdc-a8-p7S" secondAttribute="bottom" constant="2" id="RaQ-Fe-MWg"/>
                                                 <constraint firstItem="C6P-y2-8ai" firstAttribute="leading" secondItem="eUi-Vg-geA" secondAttribute="leading" id="Zfd-bg-QpC"/>
@@ -1635,6 +1637,8 @@
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="1NJ-Bo-vi6"/>
+                                                    <exclude reference="9sM-6n-DRY"/>
+                                                    <exclude reference="Kon-t0-m2i"/>
                                                     <exclude reference="RaQ-Fe-MWg"/>
                                                     <exclude reference="bfs-e0-sce"/>
                                                     <exclude reference="kXt-qQ-sGz"/>
@@ -1736,7 +1740,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CeE-4T-trI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55.5" y="65"/>
+            <point key="canvasLocation" x="-55.5" y="64"/>
         </scene>
         <!--订单详情-->
         <scene sceneID="Vmi-J9-Qko">
