@@ -36,25 +36,4 @@
     }
 }
 
-
--(NSArray *)modelsWithDicts:(NSArray *)dicts{
-    NSMutableArray *models = [[NSMutableArray alloc] init];
-    for(NSDictionary *dict in dicts){
-        GoodModel *model = [self modelWithDict:dict];
-        [models addObject:model];
-    }
-    return models;
-}
-
--(GoodModel *)modelWithDict:(NSDictionary *)dict{
-    GoodModel *model = [[GoodModel alloc] init];
-    model.bigpicture = [dict valueForKey:@"bigpicture"];
-    model.name = [dict valueForKey:@"name"];
-    model.picture = [dict valueForKey:@"picture"];
-    model.unit = [dict valueForKey:@"unit"];
-    model.discount = [dict valueForKey:@"discount"];
-    model.gid = [dict valueForKey:@"gid"];
-    model.price = [dict valueForKey:@"price"];
-    return model;
-}
 @end

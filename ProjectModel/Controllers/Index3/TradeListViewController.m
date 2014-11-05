@@ -39,7 +39,7 @@
     self.title = @"交易记录";
     page = 1;
     datas = [[NSMutableArray alloc] initWithArray:self.items];
-    [self setupRefresh];
+//    [self setupRefresh];
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,7 +82,7 @@
 - (void)footerRereshing
 {
     page++;
-    NSString *pageString = [NSString stringWithFormat:@"%d",page];    
+    NSString *pageString = [NSString stringWithFormat:@"%ld",(long)page];    
     UserDefaults *userDefaults = [[UserDefaults alloc] init];
     UserModel *userModel = [userDefaults userModel];
     NSString *urlString = [NSString stringWithFormat:AmountURL,userModel.mid,pageString];

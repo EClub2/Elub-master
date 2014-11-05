@@ -47,7 +47,7 @@
 -(void)presentPurchaseCarViewControllerOnViewController:(ItemDetailViewController *)viewController withSegue:(UIStoryboardSegue *)segue andItemCount:(NSString *)count{
     UserDefaults *userDefaults = [[UserDefaults alloc] init];
     UserModel *userModel = [userDefaults userModel];
-    GoodModel *goodModel = viewController.goodModel;
+    Type_goods_good *goodModel = viewController.goodModel;
     NSString *urlString1 = [NSString stringWithFormat:InCartURL,userModel.mid,goodModel.gid,count];
     NSLog(@"%@ ",urlString1);
     Status *cart = [[Status alloc] initFromURLWithString:urlString1 completion:^(Status *object,JSONModelError *error){

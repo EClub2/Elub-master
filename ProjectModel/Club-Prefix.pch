@@ -28,6 +28,8 @@
 #define MainGreenColor [UIColor colorWithRed:64.0/255 green:198.0/255 blue:119.0/255 alpha:1]
 
 #define IP @"http://earea.stcyclub.com"
+#define MainIP @"http://www.greenwh.com"
+#define MainPrexURL [NSString stringWithFormat:@"%@/wap.php/",MainIP]
 //#define IP @"http://scope.stcyclub.com"
 #define PrexImgPath [NSString stringWithFormat:@"%@/Static/Uploads/img/",IP]
 #define PrexURL [NSString stringWithFormat:@"%@/wap.php/",IP]
@@ -66,7 +68,12 @@
 //抢菜action
 #define RobActionURL [PrexURL stringByAppendingString: @"Robuy/porder?mid=%@&sid=%@&gid=%@"]
 #define RobOrderModelURL [PrexURL stringByAppendingString: @"Robuy/myorder?mid=%@&page=%@"]
+
+//获取菜的类别
+#define GoodsTypeURL [MainPrexURL stringByAppendingString: @"Trade/goods_type"]
 //获取菜
+#define MainGoodsURL [MainPrexURL stringByAppendingString: @"Trade/get_type_goods?mid=%@&subid=%@&page=%@"]
+
 #define GoodsURL [PrexURL stringByAppendingString: @"Trade/index?sid=%@&gtypeid=%@&page=%@"]
 //加入购物车
 #define InCartURL [PrexURL stringByAppendingString: @"Trade/incart?mid=%@&gid=%@&num=%@"]
@@ -101,4 +108,5 @@
 #define KillCountDownURL [PrexURL stringByAppendingString: @"Secondkill/countdown?mid=%@&gid=%@"]
 //我的秒杀订单
 #define KillOrderURL [PrexURL stringByAppendingString: @"Secondkill/mysecond?mid=%@&page=%@"]
+
 

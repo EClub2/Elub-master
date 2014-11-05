@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GoodModel.h"
+#import "Type_goods.h"
 @interface ItemDetailViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
 @property (weak, nonatomic) IBOutlet UILabel *currentPrice;
 @property (weak, nonatomic) IBOutlet UILabel *pastPrice;
 @property (weak, nonatomic) IBOutlet UILabel *count;
 
-@property(strong,nonatomic) GoodModel *goodModel;
+@property(strong,nonatomic) Type_goods_good *goodModel;
 @end

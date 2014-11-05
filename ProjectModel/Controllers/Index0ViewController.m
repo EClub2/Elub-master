@@ -8,7 +8,6 @@
 
 #import "Index0ViewController.h"
 #import "RobViewController.h"
-#import "BuyViewController.h"
 #import "LoginViewOperation.h"
 #import "UserDefaults.h"
 #import "InternetRequest.h"
@@ -46,8 +45,7 @@
         //需要重新加载userDefaults的数据（可能数据库的数据会经常变化）
         
     }
-//    robButton.translatesAutoresizingMaskIntoConstraints = YES;
-//    buyButton.translatesAutoresizingMaskIntoConstraints = YES;
+
 }
 
 - (void)viewDidLoad
@@ -57,13 +55,6 @@
     UITapGestureRecognizer *imgTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imgAction:)];
     [imgView addGestureRecognizer:imgTap];
 
-    
-//    float space = 5.0;
-//    float height = (DeviceFrame.size.height-imgView.frame.origin.y-imgView.frame.size.height-TabBarFrame.size.height-space*3-2)/2.0;
-//    robButton.frame = CGRectMake(0, 231, 300, 100);
-//    robButton.frame = CGRectMake(0, imgView.frame.origin.y+imgView.frame.size.height+space, DeviceFrame.size.width, height);
-//    buyButton.frame = CGRectMake(0, robButton.frame.origin.y+robButton.frame.size.height+space, DeviceFrame.size.width, height);
-//    
     index0Service = [[Index0Service alloc] init];
     [index0Service loadUserDefaultsInViewController:self];
     
@@ -74,7 +65,7 @@
         RobViewController *viewController = segue.destinationViewController;
         viewController.hidesBottomBarWhenPushed = YES;
     }else if(sender==buyButton) {
-        BuyViewController *viewController = segue.destinationViewController;
+        UIViewController *viewController = segue.destinationViewController;
         viewController.hidesBottomBarWhenPushed = YES;
     }else if([segue.identifier isEqualToString:@"GroupAction"]){
         UIViewController *viewController = segue.destinationViewController;
