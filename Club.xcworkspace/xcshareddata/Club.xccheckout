@@ -46,7 +46,7 @@
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
+			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</string>
 			<key>IDESourceControlWCCName</key>
@@ -54,7 +54,7 @@
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
+			<string>public.vcs.subversion</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</string>
 			<key>IDESourceControlWCCName</key>
