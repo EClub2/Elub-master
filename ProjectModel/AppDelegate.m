@@ -16,7 +16,6 @@
     [UMessage registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge
      |UIRemoteNotificationTypeSound
      |UIRemoteNotificationTypeAlert];
-    NSLog(@"1");
     return YES;
 }
 
