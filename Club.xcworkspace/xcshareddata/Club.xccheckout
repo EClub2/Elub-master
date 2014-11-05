@@ -13,7 +13,7 @@
 		<key>258F9B2F1F5E1D74CA63206B91A06790D456D098</key>
 		<string>github.com:EClub2/Elub-master.git</string>
 		<key>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</key>
-		<string>https://github.com/MartinLi841538513/Club2/trunk</string>
+		<string>https://github.com/MartinLi841538513/Club2</string>
 		<key>BD8BF37D48E52F4702C53EB99DD2E9DA97A1ABFC</key>
 		<string>https://github.com/MartinLi841538513/Club3-master</string>
 	</dict>
@@ -51,7 +51,7 @@
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
+			<string>public.vcs.subversion</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</string>
 			<key>IDESourceControlWCCName</key>
@@ -59,7 +59,7 @@
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
+			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</string>
 			<key>IDESourceControlWCCName</key>
