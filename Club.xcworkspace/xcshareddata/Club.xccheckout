@@ -15,7 +15,7 @@
 		<key>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</key>
 		<string>https://github.com/MartinLi841538513/Club2</string>
 		<key>BD8BF37D48E52F4702C53EB99DD2E9DA97A1ABFC</key>
-		<string>https://github.com/MartinLi841538513/Club3-master</string>
+		<string>https://github.com/MartinLi841538513/Club2</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Club.xcworkspace</string>
@@ -26,12 +26,7 @@
 		<key>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</key>
 		<string>../../Club4</string>
 		<key>BD8BF37D48E52F4702C53EB99DD2E9DA97A1ABFC</key>
-		<string>../../Club3-master</string>
-	</dict>
-	<key>IDESourceControlProjectRepositoryRootDictionary</key>
-	<dict>
-		<key>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</key>
-		<string>https://github.com/MartinLi841538513/Club2</string>
+		<string>../../Club4</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:EClub2/Elub-master.git</string>
@@ -45,9 +40,9 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>BD8BF37D48E52F4702C53EB99DD2E9DA97A1ABFC</string>
+			<string>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Club3-master</string>
+			<string>Club4</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
@@ -61,7 +56,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>9d6c210e-53c6-57e2-087c-ce57b7db7bff++505</string>
+			<string>BD8BF37D48E52F4702C53EB99DD2E9DA97A1ABFC</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Club4</string>
 		</dict>

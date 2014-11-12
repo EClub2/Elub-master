@@ -16,6 +16,7 @@
 #import "Status.h"
 #import "SVProgressHUD.h"
 #import "NSString+MT.h"
+#import "Delivery.h"
 @implementation FinalConfirmService
 
 //显示pickerview
@@ -30,10 +31,10 @@
     [selfController addChildViewController:viewController];
     [superView addSubview:viewController.view];
     button.enabled = NO;
-    float height = 172;
+    float height = 44*datas.count;
     [UIView animateWithDuration:0.3 animations:^{
         CGRect frame = viewController.view.frame;
-        if (frame.size.height<132) {
+        if (frame.size.height<height) {
             frame = CGRectMake(frame.origin.x, frame.origin.y-height, frame.size.width, frame.size.height+height);
             viewController.view.frame = frame;
         }
@@ -42,7 +43,9 @@
 
 //隐藏pickerview
 -(void)hideChildController:(UIViewController *)childController withObject:(id)object{
-    float height = -172;
+    SelectItemsTableViewController *viewController = (SelectItemsTableViewController *)childController;
+    NSInteger count = viewController.datas.count;
+    float height = (-44*count);
     UIButton *button = (UIButton *)object;
     [UIView animateWithDuration:0.3 animations:^{
         CGRect frame = childController.view.frame;
@@ -67,7 +70,7 @@
     viewController.payMethod2.tag = 1;
     [viewController.payMethod1 setImage:[UIImage imageNamed:@"checked_false"] forState:UIControlStateNormal];
     [viewController.payMethod2 setImage:[UIImage imageNamed:@"checked_true"] forState:UIControlStateNormal];
-    
+
 }
 
 -(void)sendMethod1:(UIButton *)sender inViewController:(FinalConfirmViewController *)viewController{
@@ -75,7 +78,8 @@
     viewController.sendMethod2.tag = -1;
     [viewController.sendMethod1 setImage:[UIImage imageNamed:@"checked_true"] forState:UIControlStateNormal];
     [viewController.sendMethod2 setImage:[UIImage imageNamed:@"checked_false"] forState:UIControlStateNormal];
-    
+    viewController.bottomTotalPrice.text = [NSString stringWithFormat:@"总额:￥%0.1f",[viewController.totalPriceString floatValue]];
+
 }
 
 -(void)sendMethod2:(UIButton *)sender inViewController:(FinalConfirmViewController *)viewController{
@@ -83,11 +87,12 @@
     viewController.sendMethod2.tag = 1;
     [viewController.sendMethod1 setImage:[UIImage imageNamed:@"checked_false"] forState:UIControlStateNormal];
     [viewController.sendMethod2 setImage:[UIImage imageNamed:@"checked_true"] forState:UIControlStateNormal];
+    viewController.bottomTotalPrice.text = [NSString stringWithFormat:@"总额:￥%0.1f",[viewController.totalPriceString floatValue]+[[viewController.shipping_fee.text substringToIndex:viewController.shipping_fee.text.length-1] floatValue]];
 
 }
 -(void)submitActionInViewController:(FinalConfirmViewController *)viewController{
     
-    if([self compareCurrentTimeWithTime:@"21:00:00"] == NSOrderedDescending && [self compareCurrentTimeWithTime:@"06:00:00"] == NSOrderedAscending){
+    if([self compareCurrentTimeWithTime:@"21:30:00"] == NSOrderedDescending && [self compareCurrentTimeWithTime:@"06:00:00"] == NSOrderedAscending){
         //如果是卖家送货
         if (viewController.sendMethod2.tag==1) {
             if ([viewController.sendAddress.text isEqualToString:@""]) {
@@ -104,7 +109,7 @@
         [alertView show];
 
     }else{
-        [SVProgressHUD showErrorWithStatus:@"下单时间:每天6:00-21:00"];
+        [SVProgressHUD showErrorWithStatus:@"下单时间:每天6:00-21:30"];
     }
 }
 
@@ -154,6 +159,8 @@
     }];
 }
 
+
+
 //-(NSArray *)finalItemsWithObjects:(NSArray *)datas{
 //    NSMutableArray *items = [[NSMutableArray alloc] init];
 //    NSInteger count = datas.count;
@@ -181,10 +188,10 @@
 
 -(NSString *)payTypeInViewController:(FinalConfirmViewController *)viewController{
     NSString *payType;
-    if (viewController.payMethod1.tag==1) {
-        payType = @"2";
-    }else if(viewController.payMethod2.tag==2){
+    if(viewController.payMethod2.tag==1){
         payType = @"1";
+    }else{
+        payType = @"2";
     }
     return payType;
 }
@@ -201,7 +208,26 @@
 }
 
 
-
+-(void)loadDeliveryInfosInViewController:(FinalConfirmViewController *)viewController{
+    UserDefaults *userDefaults = [[UserDefaults alloc] init];
+    UserModel *userModel = [userDefaults userModel];
+    NSString *urlString = [NSString stringWithFormat:DeliveryURL,userModel.mid];
+    [SVProgressHUD show];
+    [Delivery getModelFromURLWithString:urlString completion:^(Delivery *model,JSONModelError *error){
+        if (model.status==2) {
+            DeliveryInfo *info = model.info;
+            viewController.timeArray = info.sendtime;
+            viewController.delivery_scope.text = [NSString stringWithFormat:@"(%@)",info.delivery_scope];
+            viewController.shipping_fee.text = [NSString stringWithFormat:@"%ld元",(long)info.shipping_fee];
+            viewController.delivery_limit.text = [NSString stringWithFormat:@"小贴士:免费配送的最低交易金额为:￥%@元",info.delivery_limit];
+            [viewController.sendTime setTitle:viewController.timeArray[0] forState:UIControlStateNormal];
+            [SVProgressHUD dismiss];
+        }else{
+            NSLog(@"delivery数据加载失败");
+            [SVProgressHUD showErrorWithStatus:@"网络错误"];
+        }
+    }];
+}
 @end
 
 

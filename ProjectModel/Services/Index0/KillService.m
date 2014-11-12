@@ -22,10 +22,12 @@
     
     NSString *urlString = [NSString stringWithFormat:KillsURL,userModel.mid,@"2",@"1"];
     NSLog(@"%@",urlString);
+    [SVProgressHUD showWithStatus:@"正在加载秒杀商品"];
     Kills *kills = [[Kills alloc] initFromURLWithString:urlString completion:^(Kills *model,JSONModelError *error){
         NSLog(@"%@ ,%@",kills,urlString);
         viewController.datas = model.info.goods;
         [viewController.tableview reloadData];
+        [SVProgressHUD dismiss];
     }];
 
 }
@@ -62,7 +64,9 @@
             [SVProgressHUD showErrorWithStatus:@"商品已过期"];
         }else if(model.status==827){
             [SVProgressHUD showErrorWithStatus:@"还没开始呢"];
-        }else if(model.status == 2){
+        }else if(model.status==831){
+            [SVProgressHUD showErrorWithStatus:@"账户余额不足,请及时冲值"];
+        } else if(model.status == 2){
             [SVProgressHUD showSuccessWithStatus:@"秒杀成功"];
         }else{
             [SVProgressHUD showErrorWithStatus:@"秒杀失败"];

@@ -60,16 +60,19 @@
     UserDefaults *userDefaults = [[UserDefaults alloc] init];
     UserModel *userModel = [userDefaults userModel];
     NSString *urlString = [NSString stringWithFormat:MainGoodsURL,userModel.mid,subtypeId,page];
+    [SVProgressHUD show];
     [Type_goods getModelFromURLWithString:urlString completion:^(Type_goods *model,JSONModelError *error){
         NSLog(@"%@",urlString);
         if (model.status==2) {
             NSArray *array = model.info.goods;
             if (array.count<1) {
+                viewController.datas = nil;
                 [SVProgressHUD showErrorWithStatus:@"没有更多数据了"];
             }else{
                 viewController.datas = [NSMutableArray arrayWithArray:model.info.goods];
-                [viewController.tableview reloadData];
+                [SVProgressHUD dismiss];
             }
+            [viewController.tableview reloadData];
             [viewController.tableview headerEndRefreshing];
         }else{
             [SVProgressHUD showErrorWithStatus:@"数据加载失败"];

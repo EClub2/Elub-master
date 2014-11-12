@@ -79,6 +79,8 @@
 #define InCartURL [PrexURL stringByAppendingString: @"Trade/incart?mid=%@&gid=%@&num=%@"]
 //购物车所有菜品
 #define ItemsInCarURL [PrexURL stringByAppendingString: @"Trade/carts?mid=%@"]
+//送货提示
+#define DeliveryURL [PrexURL stringByAppendingString: @"Trade/delivery?mid=%@"]
 //提交订单
 #define SubmitItemsURL [PrexURL stringByAppendingString: @"Trade/buying"]
 
@@ -92,7 +94,7 @@
 #define DetailTradeOrderURL [PrexURL stringByAppendingString: @"Trade/orderdetail?orderid=%@"]
 
 //意见反馈
-#define FeedBackURL [PrexURL stringByAppendingString: @"Member/advice?mid=%@&content=%@"]
+#define FeedBackURL [PrexURL stringByAppendingString: @"Member/advice"]
 
 //团购
 #define GroupsURL [PrexURL stringByAppendingString: @"Groups/goodslist?mid=%@&type=%@&page=%@"]

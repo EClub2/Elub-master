@@ -17,6 +17,7 @@
 #import "UserModel.h"
 #import "MyOrderViewController.h"
 #import "AppViewController.h"
+#import "SVProgressHUD.h"
 @implementation Index3Service
 
 /*
@@ -36,10 +37,10 @@
     MyWalletViewController *userDetailViewController = [viewController.storyboard instantiateViewControllerWithIdentifier:@"MyWalletViewController"];
     userDetailViewController.hidesBottomBarWhenPushed = YES;
     [viewController.navigationController pushViewController:userDetailViewController animated:YES];
-    
     UserDefaults *userDefaults = [[UserDefaults alloc] init];
     UserModel *userModel = [userDefaults userModel];
     NSString *urlString = [NSString stringWithFormat:AmountURL,userModel.mid,@"1"];
+    [SVProgressHUD show];
     Amount *amount = [[Amount alloc] initFromURLWithString:urlString completion:^(Amount *object,JSONModelError *error){
         NSLog(@"%@",amount);
         if (!error) {
@@ -49,6 +50,7 @@
             userDetailViewController.amount.text = info.amount;
             userDetailViewController.redbag.text = info.redbag;
             userDetailViewController.datas = trades;
+            [SVProgressHUD dismiss];
         }
     }];
 }
@@ -59,6 +61,8 @@
         viewController.cardId.hidden = YES;
     }else{
         viewController.cardId.text = iccard;
+        viewController.imgView.hidden = NO;
+        viewController.cardId.hidden = NO;
     }
 }
 

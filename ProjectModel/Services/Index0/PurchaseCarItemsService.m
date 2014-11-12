@@ -35,7 +35,9 @@
             [self setViewController:viewController andCell:cell atRow:row andNum:num andGoods:viewController.datasStorage];
         }
     }else{
-        [SVProgressHUD showErrorWithStatus:@"数量最低为1"];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"请确认要删除该项？" message:@"" delegate:viewController cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        alertView.tag = row;
+        [alertView show];
     }
 }
 

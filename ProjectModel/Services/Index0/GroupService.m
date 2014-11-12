@@ -23,15 +23,17 @@
     
     NSString *urlString = [NSString stringWithFormat:GroupsURL,userModel.mid,@"2",@"1"];
     [SVProgressHUD show];
-    Groups *groups = [[Groups alloc] initFromURLWithString:urlString completion:^(Groups *model,JSONModelError *error){
-        NSLog(@"%@ ,%@",groups,urlString);
+    [Groups getModelFromURLWithString:urlString completion:^(Groups *model,JSONModelError *error){
+        NSLog(@"%@",urlString);
         if (model.status==2) {
             viewController.datas = model.info.goods;
             [viewController.tableview reloadData];
             [SVProgressHUD dismiss];
-        }else{
+        }else if(model.status==840){
+            [SVProgressHUD showErrorWithStatus:@"暂无团购数据"];
+        } else{
             [SVProgressHUD showErrorWithStatus:@"数据加载失败"];
-            NSLog(@"status:%ld",(long)model.status);
+            NSLog(@"%@",error);
         }
 
     }];
@@ -52,6 +54,8 @@
             [SVProgressHUD showSuccessWithStatus:@"加入团购成功"];
         }else if(model.status == 882){
             [SVProgressHUD showErrorWithStatus:@"打烊了"];
+        }else if(model.status == 831){
+            [SVProgressHUD showErrorWithStatus:@"账户余额不足,请及时冲值"];
         }else{
             [SVProgressHUD showErrorWithStatus:@"加入团购失败"];
             NSLog(@"status:%ld",(long)model.status);

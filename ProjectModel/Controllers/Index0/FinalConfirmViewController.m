@@ -19,12 +19,11 @@
     __weak IBOutlet UITableView *tableview;
     __weak IBOutlet UIScrollView *scrollView;
     __weak IBOutlet UILabel *totalPrice;
-    __weak IBOutlet UILabel *bottomTotalPrice;
     __weak IBOutlet UIButton *submitButton;
     __weak IBOutlet UIView *userInfo;
     
     NSString *identifier;
-    NSArray *timeArray;
+    
     
     FinalConfirmService *finalConfirmService;
 
@@ -70,9 +69,8 @@
     self.title = @"订单确认";
     
     
-    timeArray = [[NSArray alloc]initWithObjects:@"8:00-10:00",@"10:00-12:00",@"12:00-14:00",@"15:00-18:00", nil];
     totalPrice.text = [NSString stringWithFormat:@"总额:￥%@",self.totalPriceString];
-    bottomTotalPrice.text = [NSString stringWithFormat:@"总额:￥%@",self.totalPriceString];
+    self.bottomTotalPrice.text = [NSString stringWithFormat:@"总额:￥%@",self.totalPriceString];
     amount.text = [NSString stringWithFormat:@"使用账户余额：￥%@",self.account];
     redbag.text = [NSString stringWithFormat:@"使用红包余额：￥%@",self.redAccount];
 
@@ -81,7 +79,7 @@
     self.userPhone.text = userModel.mobile;
     self.sendAddress.text = userModel.address;
 
-    NSLog(@"%@",NSStringFromCGRect(tableview.frame));
+    [finalConfirmService loadDeliveryInfosInViewController:self];
 
 }
 
@@ -157,7 +155,7 @@
 - (IBAction)selectTimeAction:(id)sender {
     
     
-    [finalConfirmService showTimePickerViewOnView:scrollView withFrame:CGRectMake(userInfo.frame.origin.x+self.sendTime.frame.origin.x, self.thirdView.frame.origin.y + userInfo.frame.origin.y+self.sendTime.frame.origin.y, self.sendTime.frame.size.width,0) andDatas:timeArray onTarget:self withObject:(id)sender];
+    [finalConfirmService showTimePickerViewOnView:scrollView withFrame:CGRectMake(userInfo.frame.origin.x+self.sendTime.frame.origin.x, self.thirdView.frame.origin.y + userInfo.frame.origin.y+self.sendTime.frame.origin.y, self.sendTime.frame.size.width,0) andDatas:self.timeArray onTarget:self withObject:(id)sender];
 }
 
 - (IBAction)submitAction:(id)sender {

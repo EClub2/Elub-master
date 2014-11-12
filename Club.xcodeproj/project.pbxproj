@@ -198,7 +198,13 @@
 		8F4DBC021A09EA8F0037CCFD /* BuyGoodTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4DBC011A09EA8F0037CCFD /* BuyGoodTypeCell.m */; };
 		8F4DBC051A09F95F0037CCFD /* GoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4DBC041A09F95F0037CCFD /* GoodsViewController.m */; };
 		8F4DBC081A0A04030037CCFD /* Type_goods.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4DBC071A0A04030037CCFD /* Type_goods.m */; };
+		8F56D6F11A0F4A4100035A0C /* Index3_1Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F56D6F01A0F4A4100035A0C /* Index3_1Cell.m */; };
+		8F56D6F41A0F4A4C00035A0C /* Index3_2Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F56D6F31A0F4A4C00035A0C /* Index3_2Cell.m */; };
+		8F56D6F61A0F96C400035A0C /* future_kill_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F56D6F51A0F96C400035A0C /* future_kill_bg.png */; };
+		8F56D6F91A0F97A800035A0C /* KillIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F56D6F81A0F97A800035A0C /* KillIconCell.m */; };
 		8FA169901A0520A1002DE009 /* Index3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FA1698F1A0520A1002DE009 /* Index3.storyboard */; };
+		8FA247E11A10B74700456468 /* Delivery.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA247E01A10B74700456468 /* Delivery.m */; };
+		8FA247E41A10CC6600456468 /* SharedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA247E31A10CC6600456468 /* SharedData.m */; };
 		8FA4F41E1A03A82A00B72665 /* KillOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA4F41D1A03A82A00B72665 /* KillOrderCell.m */; };
 		8FA4F4211A03A98F00B72665 /* MySecond.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA4F4201A03A98F00B72665 /* MySecond.m */; };
 /* End PBXBuildFile section */
@@ -535,7 +541,18 @@
 		8F4DBC041A09F95F0037CCFD /* GoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsViewController.m; sourceTree = "<group>"; };
 		8F4DBC061A0A04030037CCFD /* Type_goods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type_goods.h; sourceTree = "<group>"; };
 		8F4DBC071A0A04030037CCFD /* Type_goods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type_goods.m; sourceTree = "<group>"; };
+		8F56D6EF1A0F4A4100035A0C /* Index3_1Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Index3_1Cell.h; sourceTree = "<group>"; };
+		8F56D6F01A0F4A4100035A0C /* Index3_1Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Index3_1Cell.m; sourceTree = "<group>"; };
+		8F56D6F21A0F4A4C00035A0C /* Index3_2Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Index3_2Cell.h; sourceTree = "<group>"; };
+		8F56D6F31A0F4A4C00035A0C /* Index3_2Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Index3_2Cell.m; sourceTree = "<group>"; };
+		8F56D6F51A0F96C400035A0C /* future_kill_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = future_kill_bg.png; sourceTree = "<group>"; };
+		8F56D6F71A0F97A800035A0C /* KillIconCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KillIconCell.h; sourceTree = "<group>"; };
+		8F56D6F81A0F97A800035A0C /* KillIconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KillIconCell.m; sourceTree = "<group>"; };
 		8FA1698F1A0520A1002DE009 /* Index3.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Index3.storyboard; sourceTree = "<group>"; };
+		8FA247DF1A10B74700456468 /* Delivery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Delivery.h; sourceTree = "<group>"; };
+		8FA247E01A10B74700456468 /* Delivery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Delivery.m; sourceTree = "<group>"; };
+		8FA247E21A10CC6600456468 /* SharedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedData.h; sourceTree = "<group>"; };
+		8FA247E31A10CC6600456468 /* SharedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedData.m; sourceTree = "<group>"; };
 		8FA4F41C1A03A82A00B72665 /* KillOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KillOrderCell.h; sourceTree = "<group>"; };
 		8FA4F41D1A03A82A00B72665 /* KillOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KillOrderCell.m; sourceTree = "<group>"; };
 		8FA4F41F1A03A98F00B72665 /* MySecond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySecond.h; sourceTree = "<group>"; };
@@ -600,6 +617,10 @@
 				331DEC6419B7FA6600736330 /* TradeCell.m */,
 				8FA4F41C1A03A82A00B72665 /* KillOrderCell.h */,
 				8FA4F41D1A03A82A00B72665 /* KillOrderCell.m */,
+				8F56D6EF1A0F4A4100035A0C /* Index3_1Cell.h */,
+				8F56D6F01A0F4A4100035A0C /* Index3_1Cell.m */,
+				8F56D6F21A0F4A4C00035A0C /* Index3_2Cell.h */,
+				8F56D6F31A0F4A4C00035A0C /* Index3_2Cell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -870,6 +891,7 @@
 		22557A01199645A3001B5FCC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8F56D6F51A0F96C400035A0C /* future_kill_bg.png */,
 				33E7CFAD19F79AE200D49EA6 /* killsmall2.png */,
 				33E7CF9E19F7933000D49EA6 /* now_clock.png */,
 				33537B661A0A03E900AF0AD6 /* 二维码.jpg */,
@@ -952,6 +974,8 @@
 				33E7CFC019F7A79A00D49EA6 /* KillDetailCell.m */,
 				8F4DBC001A09EA8F0037CCFD /* BuyGoodTypeCell.h */,
 				8F4DBC011A09EA8F0037CCFD /* BuyGoodTypeCell.m */,
+				8F56D6F71A0F97A800035A0C /* KillIconCell.h */,
+				8F56D6F81A0F97A800035A0C /* KillIconCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1058,6 +1082,7 @@
 		22B4981719AF54A400901ED6 /* JsonModel */ = {
 			isa = PBXGroup;
 			children = (
+				8FA247DE1A10B73700456468 /* Delivery */,
 				8F4DBBF91A09E4F10037CCFD /* goods_type */,
 				33E7CFB519F79E2700D49EA6 /* Kills */,
 				335D22C619EE42FD00EB99B5 /* Groups */,
@@ -1072,6 +1097,8 @@
 				22B4982B19AF64BE00901ED6 /* Status.h */,
 				22B4982C19AF64BE00901ED6 /* Status.m */,
 				22B4982119AF567800901ED6 /* cart */,
+				8FA247E21A10CC6600456468 /* SharedData.h */,
+				8FA247E31A10CC6600456468 /* SharedData.m */,
 			);
 			path = JsonModel;
 			sourceTree = "<group>";
@@ -1283,6 +1310,15 @@
 			path = goods_type;
 			sourceTree = "<group>";
 		};
+		8FA247DE1A10B73700456468 /* Delivery */ = {
+			isa = PBXGroup;
+			children = (
+				8FA247DF1A10B74700456468 /* Delivery.h */,
+				8FA247E01A10B74700456468 /* Delivery.m */,
+			);
+			path = Delivery;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1421,6 +1457,7 @@
 				33E7CF9B19F7911600D49EA6 /* finish_kill_bg.png in Resources */,
 				335D22E019EE5C6100EB99B5 /* naozhong_img.png in Resources */,
 				22BAA57A19979C4400B1948A /* User.storyboard in Resources */,
+				8F56D6F61A0F96C400035A0C /* future_kill_bg.png in Resources */,
 				22CFAE881999ABC500BBD914 /* ic_update.png in Resources */,
 				222514F2199D914E003DCAC1 /* home_page@2x.png in Resources */,
 				22CFAE961999B86400BBD914 /* living_circle.png in Resources */,
@@ -1500,6 +1537,7 @@
 				330FA5DC19B17F070026DFB2 /* UIKeyboardViewController.m in Sources */,
 				227240D019B352F9005210B2 /* RegisterService.m in Sources */,
 				2298029019A2EC1500E353EF /* UIScrollView+Extension.m in Sources */,
+				8F56D6F11A0F4A4100035A0C /* Index3_1Cell.m in Sources */,
 				22FDD5B019B608CA000AD40E /* QRCodeGenerator.m in Sources */,
 				2267B493199A14D400FA9FED /* ItemCell.m in Sources */,
 				22156BF619B41B5900D0EEB6 /* TradeOrderData.m in Sources */,
@@ -1518,6 +1556,7 @@
 				33E7CF6719F776C700D49EA6 /* MyGroups.m in Sources */,
 				22082CFD19A480F70088D8C3 /* NSString+MT.m in Sources */,
 				22156BF919B4269100D0EEB6 /* TradeOrderDetailViewController.m in Sources */,
+				8FA247E11A10B74700456468 /* Delivery.m in Sources */,
 				335D22DA19EE513400EB99B5 /* GroupService.m in Sources */,
 				227240C719B352F9005210B2 /* RobedRecordsService.m in Sources */,
 				227240C619B352F9005210B2 /* PurchaseCarItemsService.m in Sources */,
@@ -1538,11 +1577,13 @@
 				22FAB7DB19A38DAD00A7C0BE /* RobDao.m in Sources */,
 				22082D0019A4961C0088D8C3 /* RobOrderModel.m in Sources */,
 				2207A6FA19B2BCF50067B00C /* Buying.m in Sources */,
+				8FA247E41A10CC6600456468 /* SharedData.m in Sources */,
 				225E3DE9199B3F8B00BDCAE9 /* SelectItemsTableViewController.m in Sources */,
 				2267B4311999E2F600FA9FED /* PurchaseCarItemsViewController.m in Sources */,
 				33E7CFBE19F7A73D00D49EA6 /* KillDetailViewController.m in Sources */,
 				8FA4F4211A03A98F00B72665 /* MySecond.m in Sources */,
 				2213C71119A1DF3D001A9CF2 /* PrizeDao.m in Sources */,
+				8F56D6F91A0F97A800035A0C /* KillIconCell.m in Sources */,
 				335D22E319EE5E8F00EB99B5 /* GroupDetailViewController.m in Sources */,
 				2298029119A2EC1500E353EF /* UIScrollView+MJRefresh.m in Sources */,
 				2267B49D199A14D400FA9FED /* RobedRecordCell.m in Sources */,
@@ -1550,6 +1591,7 @@
 				224B35541995DD78009523F6 /* Index2ViewController.m in Sources */,
 				22156BF219B4184300D0EEB6 /* TradeOrderCell.m in Sources */,
 				8F4DBBFC1A09E5090037CCFD /* Goods_type.m in Sources */,
+				8F56D6F41A0F4A4C00035A0C /* Index3_2Cell.m in Sources */,
 				22B4982819AF567800901ED6 /* Cart.m in Sources */,
 				227240D119B352F9005210B2 /* UserDetailService.m in Sources */,
 				2267B4A1199A156600FA9FED /* FinalConfirmViewController.m in Sources */,
@@ -1747,7 +1789,7 @@
 					"\"${PODS_ROOT}/Headers/libqrencode\"",
 				);
 				INFOPLIST_FILE = "ProjectModel/Club-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ProjectModel/Tools/UMessage_Sdk_1.1.0",
@@ -1779,7 +1821,7 @@
 					"\"${PODS_ROOT}/Headers/libqrencode\"",
 				);
 				INFOPLIST_FILE = "ProjectModel/Club-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ProjectModel/Tools/UMessage_Sdk_1.1.0",

@@ -26,6 +26,7 @@
     NSString *mid = userModel.mid;
     NSString *urlString = [NSString stringWithFormat:TradeOrderURL,mid];
     NSLog(@"%@",urlString);
+    [SVProgressHUD show];
     TradeOrderData *orderData = [[TradeOrderData alloc] initFromURLWithString:urlString completion:^(TradeOrderData *object,JSONModelError *error){
         NSLog(@"%@",orderData);
         if (!error) {
@@ -34,6 +35,7 @@
                 TradeOrderInfo *info = object.info;
                 NSArray *orders = info.order;
                 viewController.items = orders;
+                [SVProgressHUD dismiss];
             }else if(status==840){
                 viewController.items = nil;
                 [SVProgressHUD showErrorWithStatus:@"没有数据"];
@@ -60,6 +62,7 @@
     NSString *page = @"1";
     NSString *urlString = [NSString stringWithFormat:RobOrderURL,mid,page];
     NSLog(@"%@",urlString);
+    [SVProgressHUD show];
     RobOrderData *robOrderData = [[RobOrderData alloc] initFromURLWithString:urlString completion:^(RobOrderData *object,JSONModelError *error){
         NSLog(@"%@",robOrderData);
         if (!error) {
@@ -68,6 +71,7 @@
                 RobOrderInfo *info = object.info;
                 NSArray *orders = info.order;
                 viewController.items = orders;
+                [SVProgressHUD dismiss];
             }else if(status==840){
                 viewController.items = nil;
                 [SVProgressHUD showErrorWithStatus:@"没有数据"];
@@ -95,6 +99,7 @@
     NSString *page = @"1";
     NSString *urlString = [NSString stringWithFormat:MyGroupsURL,mid,page];
     NSLog(@"%@",urlString);
+    [SVProgressHUD show];
     MyGroups *myGroups = [[MyGroups alloc] initFromURLWithString:urlString completion:^(MyGroups *object,JSONModelError *error){
         NSLog(@"%@",myGroups);
         if (!error) {
@@ -103,6 +108,7 @@
                 MyGroupOrderInfo *info = object.info;
                 NSArray *orders = info.orders;
                 viewController.items = orders;
+                [SVProgressHUD dismiss];
             }else if(status==840){
                 viewController.items = nil;
                 [SVProgressHUD showErrorWithStatus:@"没有数据"];

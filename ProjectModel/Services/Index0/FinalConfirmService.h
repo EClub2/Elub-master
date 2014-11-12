@@ -22,4 +22,6 @@
 -(void)submitActionInViewController:(FinalConfirmViewController *)viewController;
 
 -(void)submitInViewController:(FinalConfirmViewController *)viewController withPassword:(NSString *)password;
+-(void)loadDeliveryInfosInViewController:(FinalConfirmViewController *)viewController;
+
 @end

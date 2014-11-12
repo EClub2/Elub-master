@@ -50,6 +50,7 @@
     Type_goods_good *goodModel = viewController.goodModel;
     NSString *urlString1 = [NSString stringWithFormat:InCartURL,userModel.mid,goodModel.gid,count];
     NSLog(@"%@ ",urlString1);
+    [SVProgressHUD show];
     Status *cart = [[Status alloc] initFromURLWithString:urlString1 completion:^(Status *object,JSONModelError *error){
         NSLog(@"%@",cart);
         if (object.status == 2) {
@@ -68,6 +69,7 @@
     UserModel *userModel = [userDefaults userModel];
     NSString *urlString = [NSString stringWithFormat:ItemsInCarURL,userModel.mid];
     NSLog(@"%@",urlString);
+    [SVProgressHUD show];
     Cart *cart = [[Cart alloc] initFromURLWithString:urlString completion:^(Cart *object,JSONModelError *error){
         NSLog(@"%@",cart);
         if (object.status == 2) {
@@ -75,7 +77,7 @@
             itemsViewController.cartInfo = object.info;
             [itemsViewController viewDidLoad];
             [itemsViewController.tableview reloadData];
-
+            [SVProgressHUD dismiss];
         }else{
             [SVProgressHUD showErrorWithStatus:@"没有数据"];
         }
@@ -97,7 +99,7 @@
         BOOL result = [robdao addToPurchaseCarWithMid:mid andGid:gid andNum:num];
         dispatch_sync(dispatch_get_main_queue(), ^{
             if (result) {
-                [SVProgressHUD showSuccessWithStatus:@"操作成功"];
+                [SVProgressHUD showSuccessWithStatus:@"加入购物车成功"];
             }else{
                 [SVProgressHUD showErrorWithStatus:@"操作失败"];
             }

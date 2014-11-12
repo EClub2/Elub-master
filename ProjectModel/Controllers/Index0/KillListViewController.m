@@ -12,6 +12,7 @@
 #import <UIImageView+WebCache.h>
 #import "Kills.h"
 #import "KillDetailViewController.h"
+#import "KillIconCell.h"
 @interface KillListViewController ()
 {
     KillService *service;
@@ -43,27 +44,44 @@
 */
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.datas.count;
+    return self.datas.count*2;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger row = indexPath.row;
-    KillGoodCell *cell = [tableView dequeueReusableCellWithIdentifier:@"KillGoodCell" forIndexPath:indexPath];
-    KillGood *good = self.datas[row];
-    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IP,good.picture]]];
-    cell.name.text = good.name;
-    cell.price.text = [NSString stringWithFormat:@"%@元/%@",good.price,good.unit];
-    cell.discount.text = [NSString stringWithFormat:@"%@元/%@",good.discount,good.unit];
-    
-    return cell;
+    NSInteger index = row/2;
+    if (row%2==0) {
+        KillIconCell *cell = [tableView dequeueReusableCellWithIdentifier:@"KillIconCell" forIndexPath:indexPath];
+        KillGood *good = self.datas[index];
+        cell.date.text = good.start_time;
+        return cell;
+    }else{
+        KillGoodCell *cell = [tableView dequeueReusableCellWithIdentifier:@"KillGoodCell" forIndexPath:indexPath];
+        KillGood *good = self.datas[index];
+        [cell.imgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IP,good.picture]]];
+        cell.name.text = good.name;
+        cell.price.text = [NSString stringWithFormat:@"%@元/%@",good.price,good.unit];
+        cell.discount.text = [NSString stringWithFormat:@"%@元/%@",good.discount,good.unit];
+        return cell;
+    }
+   
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSInteger row = indexPath.row;
-    KillGood *good = self.datas[row];
+    NSInteger index = indexPath.row/2;
+    KillGood *good = self.datas[index];
 
     KillDetailViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"KillDetailViewController"];
     viewController.good = good;
     [self.navigationController pushViewController:viewController animated:YES];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSInteger row = indexPath.row;
+    if (row%2==0) {
+        return 40;
+    }else{
+        return 95;
+    }
 }
 
 @end

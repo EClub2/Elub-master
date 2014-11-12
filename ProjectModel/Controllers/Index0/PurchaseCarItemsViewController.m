@@ -10,7 +10,7 @@
 #import "PurchaseCarItemsService.h"
 #import <UIImageView+WebCache.h>
 
-@interface PurchaseCarItemsViewController ()
+@interface PurchaseCarItemsViewController ()<UIAlertViewDelegate>
 {
 
     __weak IBOutlet UIButton *submitButton;
@@ -165,5 +165,20 @@
     NSArray *viewControllers = self.navigationController.viewControllers;
     [self.navigationController popToViewController:[viewControllers objectAtIndex:1] animated:YES];
 }
+
+
+#pragma UIAlertViewDelegate
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex==0) {
+        
+    }else if(buttonIndex==1){
+        NSInteger row = alertView.tag;
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+        Good *good = [self.items objectAtIndex:row];
+        [puchaseCarItemsService deleteItemByGid:good.gid inPurchaseViewController:(PurchaseCarItemsViewController *)self atIndexPath:(NSIndexPath *)indexPath];
+
+    }
+}
+
 
 @end

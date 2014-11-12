@@ -17,16 +17,22 @@
     UserDefaults *userDefaults = [[UserDefaults alloc] init];
     UserModel *userModel = userDefaults.userModel;
     NSString *mid = userModel.mid;
-    NSString *urlString = [NSString stringWithFormat:FeedBackURL,mid,content];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:mid,content, nil] forKeys:[NSArray arrayWithObjects:@"mid",@"content", nil]];
+    NSString *urlString = FeedBackURL;
     if (content==nil||content.length<5) {
         [SVProgressHUD showErrorWithStatus:@"字数不够"];
         return;
     }
     [SVProgressHUD show];
-    Status *status = [[Status alloc] initFromURLWithString:urlString completion:^(Status *object,JSONModelError *error){
-        NSLog(@"%@",status);
+    NSLog(@"%@ %@",urlString,dict);
+    Status *status = [[Status alloc] init];
+    [Status postModel:status toURLWithString:urlString completion:^(Status *model,JSONModelError *error){
+    
+    }];
+    [JSONHTTPClient postJSONFromURLWithString:urlString params:dict completion:^(id object, JSONModelError *error) {
+        NSNumber *status = (NSNumber *)[object objectForKey:@"status"];
         if (!error) {
-            if (object.status==2) {
+            if ([status isEqualToNumber:[NSNumber numberWithInt:2]]) {
                 [SVProgressHUD showSuccessWithStatus:@"提交成功"];
             }else{
                 [SVProgressHUD showErrorWithStatus:@"提交失败"];
