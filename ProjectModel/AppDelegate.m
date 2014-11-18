@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 #import "UMessage.h"
+#import <AlipaySDK/AlipaySDK.h>
+#import "SVProgressHUD.h"
+#import "CreatePayViewController.h"
+#import "CreatePayService.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -57,6 +61,38 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     [UMessage didReceiveRemoteNotification:userInfo];
+}
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    NSLog(@"url=%@   sourceApplication=%@",url,sourceApplication);
+    //如果极简SDK不可用，会跳转支付宝钱包进行支付，需要将支付宝钱包的支付结果回传给SDK
+    if ([url.host isEqualToString:@"safepay"]) {
+        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+            NSLog(@"reslut = %@",resultDic);
+            NSString *status = [resultDic objectForKey:@"resultStatus"];
+            if ([status isEqualToString:@"9000"]) {
+                [SVProgressHUD showSuccessWithStatus:@"支付成功"];
+                UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+                CreatePayService *service = [[CreatePayService alloc] init];
+                [service reloadAmoutAfterPopToViewControllerInNav:(UINavigationController *)tab.selectedViewController];
+            }else{
+                [SVProgressHUD showErrorWithStatus:@"支付失败"];
+            }
+        }];
+    }
+    if ([url.host isEqualToString:@"platformapi"]){//支付宝钱包快登授权返回authCode
+        [[AlipaySDK defaultService] processAuthResult:url standbyCallback:^(NSDictionary *resultDic) {
+           
+            NSLog(@"reslut = %@",resultDic);
+            NSString *status = [resultDic objectForKey:@"resultStatus"];
+            if ([status isEqualToString:@"9000"]) {
+                [SVProgressHUD showSuccessWithStatus:@"支付成功"];
+            }else{
+                [SVProgressHUD showErrorWithStatus:@"支付失败"];
+            }
+        }];
+    }
+    return YES;
 }
 
 @end

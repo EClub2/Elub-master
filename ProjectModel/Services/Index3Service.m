@@ -34,25 +34,31 @@
  */
 -(void)presentMyWalletViewControllerOnViewController:(UIViewController *)viewController{
     
-    MyWalletViewController *userDetailViewController = [viewController.storyboard instantiateViewControllerWithIdentifier:@"MyWalletViewController"];
-    userDetailViewController.hidesBottomBarWhenPushed = YES;
-    [viewController.navigationController pushViewController:userDetailViewController animated:YES];
+    MyWalletViewController *walletViewController = [viewController.storyboard instantiateViewControllerWithIdentifier:@"MyWalletViewController"];
+    walletViewController.hidesBottomBarWhenPushed = YES;
+    [viewController.navigationController pushViewController:walletViewController animated:YES];
+    [self loadAmountInViewController:walletViewController];
+}
+
+-(void)loadAmountInViewController:(MyWalletViewController *)viewController{
     UserDefaults *userDefaults = [[UserDefaults alloc] init];
     UserModel *userModel = [userDefaults userModel];
     NSString *urlString = [NSString stringWithFormat:AmountURL,userModel.mid,@"1"];
+    NSLog(@"%@",urlString);
     [SVProgressHUD show];
     Amount *amount = [[Amount alloc] initFromURLWithString:urlString completion:^(Amount *object,JSONModelError *error){
         NSLog(@"%@",amount);
         if (!error) {
             Info *info = object.info;
-            [self setIccard:info.iccard InViewController:userDetailViewController];
+            [self setIccard:info.iccard InViewController:viewController];
             NSArray<Trade> *trades = info.trade;
-            userDetailViewController.amount.text = info.amount;
-            userDetailViewController.redbag.text = info.redbag;
-            userDetailViewController.datas = trades;
+            viewController.amount.text = info.amount;
+            viewController.redbag.text = info.redbag;
+            viewController.datas = trades;
             [SVProgressHUD dismiss];
         }
     }];
+
 }
 
 -(void)setIccard:(NSString *)iccard InViewController:(MyWalletViewController *)viewController{

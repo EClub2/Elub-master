@@ -8,8 +8,13 @@
 
 #import "MyWalletViewController.h"
 #import "TradeListViewController.h"
-@interface MyWalletViewController ()
+#import "CreatePayViewController.h"
+#import "Index3Service.h"
 
+@interface MyWalletViewController ()<CreatePayViewDelegate>
+{
+    Index3Service *service;
+}
 @end
 
 @implementation MyWalletViewController
@@ -28,6 +33,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"我的钱包";
+    service = [[Index3Service alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,5 +52,8 @@
 
 }
 
-
+#pragma mark -CreatePayViewDelegate
+-(void)reloadAmount{
+    [service loadAmountInViewController:self];
+}
 @end

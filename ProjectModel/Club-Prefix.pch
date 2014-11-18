@@ -27,7 +27,7 @@
 
 #define MainGreenColor [UIColor colorWithRed:64.0/255 green:198.0/255 blue:119.0/255 alpha:1]
 
-#define IP @"http://earea.stcyclub.com"
+#define IP @"http://www.greenwh.com"
 #define MainIP @"http://www.greenwh.com"
 #define MainPrexURL [NSString stringWithFormat:@"%@/wap.php/",MainIP]
 //#define IP @"http://scope.stcyclub.com"
@@ -110,5 +110,6 @@
 #define KillCountDownURL [PrexURL stringByAppendingString: @"Secondkill/countdown?mid=%@&gid=%@"]
 //我的秒杀订单
 #define KillOrderURL [PrexURL stringByAppendingString: @"Secondkill/mysecond?mid=%@&page=%@"]
-
+//充值信息
+#define Create_pay_orderURL [PrexURL stringByAppendingString: @"Pay/create_pay_order?mid=%@&price=%@"]
 

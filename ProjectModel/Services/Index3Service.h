@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Index3ViewController.h"
+@class MyWalletViewController;
 @interface Index3Service : NSObject
 -(void)presentUserDetailViewControllerOnViewController:(UIViewController *)viewController;
 -(void)presentFeedBackViewControllerOnViewController:(UIViewController *)viewController;
@@ -16,4 +17,6 @@
 -(void)presentMyOrderViewControllerOnViewController:(UIViewController *)viewController;
 -(void)callInViewController:(Index3ViewController *)viewController;
 -(void)presentAppViewControllerOnViewController:(UIViewController *)viewController;
+
+-(void)loadAmountInViewController:(MyWalletViewController *)viewController;
 @end
