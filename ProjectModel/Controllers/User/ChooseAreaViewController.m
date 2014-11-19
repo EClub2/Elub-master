@@ -98,8 +98,8 @@
 
 - (IBAction)submitAction:(id)sender {
     
-    NSString *urlString = [NSString stringWithFormat:BindScopeURL,self.userModel.mid,blockIdSelected];
-    [self bindScopeWithURLString:urlString];
+//    NSString *urlString = [NSString stringWithFormat:BindScopeURL,self.user.mid,blockIdSelected];
+//    [self bindScopeWithURLString:urlString];
 }
 
 
@@ -167,7 +167,7 @@
                 NSNumber *status = (NSNumber *)[result objectForKey:@"status"];
                 if ([status isEqual:[NSNumber numberWithInt:2]]) {
                     LoginService *loginService = [[LoginService alloc] init];
-                    [loginService handlesWhenDismissLoginViewController:self.loginViewController withUserInfos:self.userModel];
+                    [loginService handlesWhenDismissLoginViewController:self.loginViewController];
                     [SVProgressHUD showSuccessWithStatus:@"关联小区成功"];
                 }else{
                     [SVProgressHUD showErrorWithStatus:@"关联失败出错"];

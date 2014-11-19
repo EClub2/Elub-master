@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
 #import "DatasTableViewController.h"
-#import "UserModel.h"
+#import "Login.h"
 @interface ChooseAreaViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,DatasTableViewControllerDelegate>
 
-@property(nonatomic,retain)UserModel *userModel;
+@property(nonatomic,retain)UserInfo *user;
 @property(nonatomic,retain)LoginViewController *loginViewController;
 
 @end

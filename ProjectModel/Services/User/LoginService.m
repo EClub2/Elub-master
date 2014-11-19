@@ -14,38 +14,48 @@
 #import "InternetRequest.h"
 #import "UserDao.h"
 #import "ChooseAreaViewController.h"
-
+#import "Login.h"
+#import "SVProgressHUD.h"
+#import "JSONModelLib.h"
+#import "SharedData.h"
 @implementation LoginService
 
 -(void)loginWithName:(NSString *)name andPasswd:(NSString *)passwd onViewController:(LoginViewController *)viewController{
     if ([self validateLoginInfosWithName:name andPasswd:passwd]) {
         
+        NSString *password = [MyMD5 md5:passwd];
+        NSString *urlString = [NSString stringWithFormat:LoginURL,name,password];
+        NSLog(@"%@",urlString);
         [SVProgressHUD show];
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            //InteractWithServerOnJSON interactWithServerOnJSON 这是我自己封装的加载json数据的方法
-            UserDao *userDao = [[UserDao alloc] init];
-            UserModel *model = [userDao getUserWithName:name andPassword:passwd];
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                if (model==nil) {
-                    [SVProgressHUD showErrorWithStatus:@"登录失败"];
+        [Login getModelFromURLWithString:urlString completion:^(Login *model,JSONModelError *error){
+            if (model.status==2) {
+                 NSInteger sid = model.info.sid;
+                [self setSharedDataWithUser:model.info andUserName:name andPassWord:password];
+
+                if (sid==0) {
+                    ChooseAreaViewController *chooseAreaViewController = [viewController.storyboard instantiateViewControllerWithIdentifier:@"ChooseAreaViewController"];
+                    chooseAreaViewController.user = model.info;
+                    chooseAreaViewController.loginViewController = viewController;
+                    [viewController.navigationController pushViewController:chooseAreaViewController animated:YES];
                 }else{
-                    [SVProgressHUD showSuccessWithStatus:@"登录成功"];
-                    if (model.sid==nil||[model.sid isEqualToString:@""]) {
-                        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"User" bundle:nil];
-                        ChooseAreaViewController *chooseAreaViewController = [storyboard instantiateViewControllerWithIdentifier:@"ChooseAreaViewController"];
-                        chooseAreaViewController.userModel = model;
-                        chooseAreaViewController.loginViewController = viewController;
-                        [viewController.navigationController pushViewController:chooseAreaViewController animated:YES];
-                    }else{
-                        [self handlesWhenDismissLoginViewController:viewController withUserInfos:(UserModel *)model];
-                    }
+                    [self handlesWhenDismissLoginViewController:viewController];
                 }
-            });
-        });
+                [SVProgressHUD dismiss];
+            }else{
+                [SVProgressHUD showErrorWithStatus:model.error];
+            }
+        }];
+        
     }
 }
 
-
+-(void)setSharedDataWithUser:(UserInfo *)user andUserName:(NSString *)username andPassWord:(NSString *)password{
+    SharedData *sharedData = [SharedData sharedInstance];
+    sharedData.user = user;
+    sharedData.loginname = username;
+    sharedData.password = password;
+    sharedData.loginStatus = @"yes";
+}
 
 -(void)pushRegisterViewControllerOnViewController:(LoginViewController *)viewController{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"User" bundle:nil];
@@ -70,12 +80,10 @@
 }
 
 //dismiss LoginViewController时处理操作
--(void)handlesWhenDismissLoginViewController:(LoginViewController *)loginViewContrller withUserInfos:(UserModel *)model{
+-(void)handlesWhenDismissLoginViewController:(LoginViewController *)loginViewContrller{
     [loginViewContrller.delegate loginSuccessedActionWithViewController:loginViewContrller];  //dismiss viewcontroller
     
-    UserDefaults *userdefaults = [[UserDefaults alloc] init]; //set login status
-    [userdefaults setIsLogin:@"YES"];
-    [userdefaults setUserModel:model];    //set UserInfos 
+ 
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"loginSuccessAction" object:self];  //loadData
 }

@@ -1,3 +1,4 @@
+
 //
 //  UserDao.m
 //  Club
@@ -11,7 +12,6 @@
 #import "InternetRequest.h"
 
 @implementation UserDao
-
 //发送验证码
 -(BOOL)sendValidateCodeWithName:(NSString *)name{
     

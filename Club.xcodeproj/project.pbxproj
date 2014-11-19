@@ -138,7 +138,6 @@
 		22F09748199DF24F007B9E7B /* RewardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F09746199DF24F007B9E7B /* RewardCell.xib */; };
 		22F0974B199E0D55007B9E7B /* RewardRecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0974A199E0D55007B9E7B /* RewardRecordsViewController.m */; };
 		22F1E52819A082CC00E66885 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F1E52719A082CC00E66885 /* UserModel.m */; };
-		22F1E52B19A082DA00E66885 /* UserDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F1E52A19A082DA00E66885 /* UserDao.m */; };
 		22F1E53719A0A34600E66885 /* InternetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F1E52F19A0A34600E66885 /* InternetRequest.m */; };
 		22F1E53819A0A34600E66885 /* MyMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F1E53219A0A34600E66885 /* MyMD5.m */; };
 		22F1E54319A0ABFE00E66885 /* ChooseAreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F1E54219A0ABFE00E66885 /* ChooseAreaViewController.m */; };
@@ -193,6 +192,8 @@
 		33F7608B1A00ABEA0058FC6C /* KillCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F7608A1A00ABEA0058FC6C /* KillCountDown.m */; };
 		33FFA03319BAD7EA00EFFC8D /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFA03119BAD7EA00EFFC8D /* libUMessage_Sdk_1.1.0.a */; };
 		33FFA03419BADB0E00EFFC8D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFA02219BAB60200EFFC8D /* libz.dylib */; };
+		8F40177E1A1C573C00C20CEA /* UserDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F40177D1A1C573C00C20CEA /* UserDao.m */; };
+		8F4793111A1C5E9400546648 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4793101A1C5E9400546648 /* Login.m */; };
 		8F4DBBFC1A09E5090037CCFD /* Goods_type.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4DBBFB1A09E5090037CCFD /* Goods_type.m */; };
 		8F4DBBFF1A09EA430037CCFD /* BuyViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4DBBFE1A09EA430037CCFD /* BuyViewController2.m */; };
 		8F4DBC021A09EA8F0037CCFD /* BuyGoodTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4DBC011A09EA8F0037CCFD /* BuyGoodTypeCell.m */; };
@@ -453,7 +454,6 @@
 		22F1E52619A082CC00E66885 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		22F1E52719A082CC00E66885 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		22F1E52919A082DA00E66885 /* UserDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDao.h; sourceTree = "<group>"; };
-		22F1E52A19A082DA00E66885 /* UserDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDao.m; sourceTree = "<group>"; };
 		22F1E52E19A0A34600E66885 /* InternetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternetRequest.h; sourceTree = "<group>"; };
 		22F1E52F19A0A34600E66885 /* InternetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetRequest.m; sourceTree = "<group>"; };
 		22F1E53119A0A34600E66885 /* MyMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMD5.h; sourceTree = "<group>"; };
@@ -547,6 +547,9 @@
 		33FFA02419BABAAB00EFFC8D /* libPods-libPusher.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-libPusher.a"; path = "Pods/build/Debug-iphoneos/libPods-libPusher.a"; sourceTree = "<group>"; };
 		33FFA03119BAD7EA00EFFC8D /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
 		33FFA03219BAD7EA00EFFC8D /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
+		8F40177D1A1C573C00C20CEA /* UserDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDao.m; sourceTree = "<group>"; };
+		8F47930F1A1C5E9400546648 /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
+		8F4793101A1C5E9400546648 /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
 		8F4DBBFA1A09E5090037CCFD /* Goods_type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goods_type.h; sourceTree = "<group>"; };
 		8F4DBBFB1A09E5090037CCFD /* Goods_type.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goods_type.m; sourceTree = "<group>"; };
 		8F4DBBFD1A09EA430037CCFD /* BuyViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyViewController2.h; sourceTree = "<group>"; };
@@ -958,7 +961,7 @@
 				224B35741995F00F009523F6 /* UserinfosDao.h */,
 				224B35751995F00F009523F6 /* UserinfosDao.m */,
 				22F1E52919A082DA00E66885 /* UserDao.h */,
-				22F1E52A19A082DA00E66885 /* UserDao.m */,
+				8F40177D1A1C573C00C20CEA /* UserDao.m */,
 				2213C70F19A1DF3D001A9CF2 /* PrizeDao.h */,
 				2213C71019A1DF3D001A9CF2 /* PrizeDao.m */,
 				22FAB7D919A38DAD00A7C0BE /* RobDao.h */,
@@ -1209,6 +1212,7 @@
 		22B4981719AF54A400901ED6 /* JsonModel */ = {
 			isa = PBXGroup;
 			children = (
+				8F4017881A1C5C5400C20CEA /* Login */,
 				8FEAA1FB1A19FB29001E792C /* create_pay_order */,
 				8FA247DE1A10B73700456468 /* Delivery */,
 				8F4DBBF91A09E4F10037CCFD /* goods_type */,
@@ -1426,6 +1430,15 @@
 				0D759A3B59BCC45ED69D122C /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8F4017881A1C5C5400C20CEA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8F47930F1A1C5E9400546648 /* Login.h */,
+				8F4793101A1C5E9400546648 /* Login.m */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		8F4DBBF91A09E4F10037CCFD /* goods_type */ = {
@@ -1779,6 +1792,7 @@
 			files = (
 				335D22D419EE466100EB99B5 /* GroupsViewController.m in Sources */,
 				227240CA19B352F9005210B2 /* Index1Service.m in Sources */,
+				8F40177E1A1C573C00C20CEA /* UserDao.m in Sources */,
 				227240C319B352F9005210B2 /* BuyService.m in Sources */,
 				2207A70119B2E66C0067B00C /* MyWalletViewController.m in Sources */,
 				2235054A1998A70B0026B92F /* UserDetailViewController.m in Sources */,
@@ -1830,6 +1844,7 @@
 				33E7CFC119F7A79A00D49EA6 /* KillDetailCell.m in Sources */,
 				22F0974B199E0D55007B9E7B /* RewardRecordsViewController.m in Sources */,
 				2267B495199A14D400FA9FED /* ItemInfosCell.m in Sources */,
+				8F4793111A1C5E9400546648 /* Login.m in Sources */,
 				2298028F19A2EC1500E353EF /* MJRefreshHeaderView.m in Sources */,
 				224B354E1995DD60009523F6 /* Index1ViewController.m in Sources */,
 				22F09737199DDFEF007B9E7B /* QRCodeViewController.m in Sources */,
@@ -1867,7 +1882,6 @@
 				8FEAA2721A19FB9C001E792C /* RSADataSigner.m in Sources */,
 				22557A0A19965276001B5FCC /* PastItemsTableViewController.m in Sources */,
 				332F551019B1BE1F00333C4A /* RobRecorder.m in Sources */,
-				22F1E52B19A082DA00E66885 /* UserDao.m in Sources */,
 				8FEAA26D1A19FB9C001E792C /* DataSigner.m in Sources */,
 				227240DB19B3566F005210B2 /* OrderCell.m in Sources */,
 				22251504199DB9A7003DCAC1 /* FeedbackViewController.m in Sources */,
@@ -2045,6 +2059,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1B665B3AA69930588A9B897E /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Gao Huang (736TRZPDTD)";
@@ -2065,6 +2080,7 @@
 					"\"${PODS_ROOT}/Headers/SVProgressHUD\"",
 					"\"${PODS_ROOT}/Headers/libqrencode\"",
 					"$(SRCROOT)/ProjectModel/Tools/AlixPaySDK",
+					"\"${PODS_ROOT}/Headers/Public/JSONModel\"",
 				);
 				INFOPLIST_FILE = "ProjectModel/Club-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -2084,6 +2100,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0D759A3B59BCC45ED69D122C /* Pods.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Gao Huang (736TRZPDTD)";
@@ -2104,6 +2121,7 @@
 					"\"${PODS_ROOT}/Headers/SVProgressHUD\"",
 					"\"${PODS_ROOT}/Headers/libqrencode\"",
 					"$(SRCROOT)/ProjectModel/Tools/AlixPaySDK",
+					"\"${PODS_ROOT}/Headers/Public/JSONModel\"",
 				);
 				INFOPLIST_FILE = "ProjectModel/Club-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

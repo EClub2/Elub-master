@@ -30,15 +30,15 @@
     return [userDefaults objectForKey:@"loginStatus"];
 }
 
--(void)setUsername:(NSString *)username{
+-(void)setLoginname:(NSString *)loginname{
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:username forKey:@"username"];
+    [userDefaults setObject:loginname forKey:@"loginname"];
     [userDefaults synchronize];
 }
 
--(NSString *)username{
+-(NSString *)loginname{
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    return [userDefaults objectForKey:@"username"];
+    return [userDefaults objectForKey:@"loginname"];
 }
 
 -(void)setPassword:(NSString *)password{

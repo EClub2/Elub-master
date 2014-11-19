@@ -9,10 +9,9 @@
 #import "Index0ViewController.h"
 #import "RobViewController.h"
 #import "LoginViewOperation.h"
-#import "UserDefaults.h"
 #import "InternetRequest.h"
 #import "Index0Service.h"
-
+#import "SharedData.h"
 @interface Index0ViewController ()
 {
     __weak IBOutlet UIImageView *imgView;
@@ -37,8 +36,8 @@
 
 -(void)loadView{
     [super loadView];
-    UserDefaults *userDefaults = [[UserDefaults alloc] init];
-    if (![[userDefaults isLogin] isEqualToString:@"YES"]) {
+    SharedData *sharedData = [SharedData sharedInstance];
+    if (![[sharedData loginStatus] isEqualToString:@"yes"]) {
         loginViewOperation = [[LoginViewOperation alloc] init];
         [loginViewOperation presentLoginViewControllerInViewController:self];
     }else{

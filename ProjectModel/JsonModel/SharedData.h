@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "UserModel.h"
+#import "Login.h"
 @interface SharedData : NSObject
 
-@property(nonatomic,strong)UserModel *user;
-@property(nonatomic,strong)NSString *username;
+@property(nonatomic,strong)UserInfo *user;
+@property(nonatomic,strong)NSString *loginname;
 @property(nonatomic,strong)NSString *password;
 @property(nonatomic,strong)NSString *loginStatus;
 @property(nonatomic,strong)NSString *iccard;

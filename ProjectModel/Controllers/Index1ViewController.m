@@ -9,8 +9,8 @@
 #import "Index1ViewController.h"
 #import "InternetRequest.h"
 #import "Index1Service.h"
-#import "UserDefaults.h"
-#import "UserModel.h"
+#import "SharedData.h"
+#import "Login.h"
 #import "SVProgressHUD.h"
 #define HongbaoImg [UIImage imageNamed:@"hongbao.jpg"]
 #define CurImg nil
@@ -53,8 +53,6 @@
     float endTimerTotal;//减速共耗时间
 
     Index1Service *index1Service;
-    UserDefaults *userDefaults;
-    UserModel *userModel;
 }
 @end
 
@@ -90,12 +88,6 @@
         UIImageView *view = array[i];
         view.tag = i;
     }
-    
-    userDefaults = [[UserDefaults alloc] init];
-    userModel = [userDefaults userModel];
-//    NSArray *rotary = userModel.rotary;
-    
-//    datas = [self datasByRotary:rotary];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
