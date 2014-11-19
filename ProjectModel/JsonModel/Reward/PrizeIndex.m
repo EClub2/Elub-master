@@ -6,13 +6,17 @@
 //  Copyright (c) 2014年 martin. All rights reserved.
 //
 
-#import "NewluckyData.h"
-@implementation Newlucky
+#import "PrizeIndex.h"
+@implementation Prize
 
 @end
-@implementation NewluckyInfo
+@implementation Rotary
 
 @end
-@implementation NewluckyData
+
+@implementation PrizeIndexInfo
+
+@end
+@implementation PrizeIndex
 
 @end

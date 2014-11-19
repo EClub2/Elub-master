@@ -242,7 +242,7 @@
                         <outlet property="label9" destination="Gh9-2h-9Ue" id="oUI-0O-Vyd"/>
                         <outlet property="marqueeLabel" destination="dZH-Vq-RBL" id="lFr-12-IIF"/>
                         <outlet property="startButton" destination="1v3-Xa-mgJ" id="yhb-cT-8Th"/>
-                        <outlet property="tipLabel" destination="54U-EP-FOf" id="D6S-Jl-6Kp"/>
+                        <outlet property="tipLabel" destination="54U-EP-FOf" id="Qd7-CB-COe"/>
                         <outlet property="view1" destination="Sk0-iW-3eo" id="hUc-ZC-AWO"/>
                         <outlet property="view10" destination="P1C-eg-UE4" id="SP4-rG-5ZY"/>
                         <outlet property="view11" destination="SCs-Nn-Qd5" id="CHg-MT-C6C"/>

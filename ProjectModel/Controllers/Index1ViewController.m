@@ -30,7 +30,6 @@
     __weak IBOutlet UIImageView *view11;
     __weak IBOutlet UIImageView *view12;
     __weak IBOutlet UIButton *startButton;
-    __weak IBOutlet UILabel *tipLabel;
     
     __weak IBOutlet UILabel *label1;
     __weak IBOutlet UILabel *label2;
@@ -47,7 +46,6 @@
     
     
     NSArray *array;
-    NSArray *datas;
     NSTimer *timer;
     UIImageView *currentView;
     float intervalTime;//变换时间差（用来表示速度）
@@ -95,16 +93,14 @@
     
     userDefaults = [[UserDefaults alloc] init];
     userModel = [userDefaults userModel];
-    tipLabel.text = [NSString stringWithFormat:@"您当前还有%ld次机会，已有%ld人参与抽奖",userModel.nums,userModel.peoples];
-    NSArray *rotary = userModel.rotary;
+//    NSArray *rotary = userModel.rotary;
     
-    datas = [self datasByRotary:rotary];
+//    datas = [self datasByRotary:rotary];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self setLabel];
-    [index1Service loadNewluckyInViewController:self];
+    [index1Service loadPrizeDataInViewController:self];
 }
 
 //暂停/开始滚动
@@ -120,24 +116,14 @@
     }
 }
 
--(NSArray *)datasByRotary:(NSArray *)rotary{
-    NSInteger count = rotary.count;
-    NSMutableArray *arr = [[NSMutableArray alloc] init];
-    for (NSInteger i=0; i<count; i++) {
-        NSDictionary *data = [rotary objectAtIndex:i];
-        NSString *cash = [data objectForKey:@"cash"];
-        [arr addObject:cash];
-    }
-    return arr;
-}
 
--(void)setLabel{
+-(void)setLabelWithRotary:(NSArray *)rotary{
     NSArray *arr = [[NSArray alloc] initWithObjects:label1,label2,label3,label4,label5,label6,label7,label8,label9,label10,label11,label12, nil];
     NSInteger count = arr.count;
     for (NSInteger i=0; i<count; i++) {
         UILabel *label = [arr objectAtIndex:i];
-        NSString *data = [datas objectAtIndex:i];
-        label.text = data;
+        Rotary *data = rotary[i];
+        label.text = data.cash;
     }
 }
 
@@ -156,16 +142,16 @@
 
 //抽奖
 - (IBAction)drawLotteryAction:(id)sender {
-    NSInteger num = userModel.nums;
+    NSInteger num = self.prizeIndexInfo.nums;
+    long peoples = self.prizeIndexInfo.peoples;
     if (num==0) {
         [SVProgressHUD showErrorWithStatus:@"您今日抽奖次数已用完"];
     }else{
         [self initViews];
         timer = [NSTimer scheduledTimerWithTimeInterval:intervalTime target:self selector:@selector(startChoujiang:) userInfo:currentView repeats:NO];
         num--;
-        userModel.nums = num;
-        [userDefaults setUserModel:userModel];
-        tipLabel.text = [NSString stringWithFormat:@"您当前还有%ld次机会，已有%ld人参与抽奖",userModel.nums,userModel.peoples];
+        peoples++;
+        self.tipLabel.text = [NSString stringWithFormat:@"您当前还有%ld次机会，已有%ld人参与抽奖",num,peoples];
     }
 }
 - (IBAction)checkRules:(id)sender {
@@ -254,7 +240,7 @@
     }else{
         [timer invalidate];
         timeTotal = 0;
-        [index1Service showAwardViewWithDatas:datas andCurrentView:currentView inController:self];
+        [index1Service showAwardViewWithDatas:self.rotaty andCurrentView:currentView inController:self];
         startButton.enabled = YES;
     }
     

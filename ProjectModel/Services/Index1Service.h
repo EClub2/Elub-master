@@ -22,5 +22,5 @@
 
 -(void)loadWebViewWithURLString:(NSString *)URLString andTitle:(NSString *)title onViewContrller:(UIViewController *)viewController;
 -(void)presentRewardRecordViewControllerInViewController:(UIViewController *)viewController;
--(void)loadNewluckyInViewController:(Index1ViewController *)viewController;
+-(void)loadPrizeDataInViewController:(Index1ViewController *)viewController;
 @end

@@ -14,7 +14,7 @@
 #import "UserDefaults.h"
 #import "UserModel.h"
 #import "JSONModelLib.h"
-#import "NewluckyData.h"
+#import "PrizeIndex.h"
 #import <MarqueeLabel.h>
 #define HongbaoImg [UIImage imageNamed:@"hongbao.jpg"]
 #define CurImg nil
@@ -108,7 +108,8 @@
 
 -(void)showAwardViewWithDatas:(NSArray *)datas andCurrentView:(UIImageView *)currentView inController:(UIViewController *)viewController{
     NSUInteger index = currentView.tag;
-    NSString *result = [datas objectAtIndex:index];
+    Rotary *data = [datas objectAtIndex:index];
+    NSString *result = data.cash;
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"中奖信息" message:result delegate:viewController cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     [alertView show];
     NSLog(@"你中了：%@元红包",result);
@@ -135,22 +136,56 @@
 }
 
 //加载最新中奖的小伙伴信息
--(void)loadNewluckyInViewController:(Index1ViewController *)viewController{
-    NewluckyData *cart = [[NewluckyData alloc] initFromURLWithString:NewluckyURL completion:^(NewluckyData *object,JSONModelError *error){
-        NSLog(@"%@",cart);
+-(void)loadPrizeDataInViewController:(Index1ViewController *)viewController{
+    UserDefaults *userDefaults = [[UserDefaults alloc] init];
+    UserModel *userModel = [userDefaults userModel];
+    NSString *urlString = [NSString stringWithFormat:PrizeIndexURL,userModel.mid];
+    NSLog(@"%@",urlString);
+    [SVProgressHUD showWithStatus:@"正在加载今日抽奖信息"];
+    [PrizeIndex getModelFromURLWithString:urlString completion:^(PrizeIndex *object,JSONModelError *error){
+        
         if (object.status == 2) {
-            NSArray *lucky = object.info.lucky;
-            NSInteger count = lucky.count;
-            NSMutableString *content = [[NSMutableString alloc] init];
-            for (NSInteger i=0; i<count; i++) {
-                Newlucky *newlucky = [lucky objectAtIndex:i];
-                [content appendString:[NSString stringWithFormat:@"恭喜会员%@获得%@元红包    ",newlucky.nickname,newlucky.amount_red]];
-            }
-            viewController.marqueeLabel.text = content;
+            NSArray *lucky = object.info.prize;
+            NSArray *rotary = object.info.rotary;
+            viewController.prizeIndexInfo = object.info;
+            [self loadPrizeDatas:lucky inViewController:viewController];
+            [self loadRotaryDatas:rotary inViewController:viewController];
+            viewController.tipLabel.text = [NSString stringWithFormat:@"您当前还有%d次机会，已有%ld人参与抽奖",object.info.nums,object.info.peoples];
+
+            [SVProgressHUD showSuccessWithStatus:@"加载成功"];
         }else{
             [SVProgressHUD showErrorWithStatus:@"没有数据"];
         }
     }];
 
 }
+
+//加载中奖人信息
+-(void)loadPrizeDatas:(NSArray *)prizes inViewController:(Index1ViewController *)viewController{
+    NSInteger count = prizes.count;
+    NSMutableString *content = [[NSMutableString alloc] init];
+    for (NSInteger i=0; i<count; i++) {
+        Prize *newlucky = [prizes objectAtIndex:i];
+        [content appendString:[NSString stringWithFormat:@"恭喜会员%@获得%@元红包    ",newlucky.nickname,newlucky.amount_red]];
+    }
+    viewController.marqueeLabel.text = content;
+}
+//加载奖品信息
+-(void)loadRotaryDatas:(NSArray *)rotary inViewController:(Index1ViewController *)viewController{
+    viewController.rotaty = rotary;
+    [viewController setLabelWithRotary:rotary];
+
+}
+
+//-(NSArray *)datasByRotary:(NSArray *)rotary{
+//    NSInteger count = rotary.count;
+//    NSMutableArray *arr = [[NSMutableArray alloc] init];
+//    for (NSInteger i=0; i<count; i++) {
+//        Rotary *data = [rotary objectAtIndex:i];
+//        NSString *cash = data.cash;
+//        [arr addObject:cash];
+//    }
+//    return arr;
+//}
+
 @end

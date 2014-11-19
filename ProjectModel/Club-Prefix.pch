@@ -54,6 +54,7 @@
 //抽奖
 #define LottryURL [PrexURL stringByAppendingString: @"Prize/lucky?mid=%@"]
 #define NewluckyURL [PrexURL stringByAppendingString: @"Prize/newlucky"]
+#define PrizeIndexURL [PrexURL stringByAppendingString: @"Prize/index?mid=%@"]
 //抽奖记录
 #define RewardRecordURL [PrexURL stringByAppendingString: @"Prize/mylucky?mid=%@&page=%@"]
 //抽奖规则

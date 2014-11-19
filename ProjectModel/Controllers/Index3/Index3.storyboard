@@ -2563,7 +2563,7 @@
                                     <constraint firstAttribute="height" constant="30" id="Ieo-2q-dh5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Ieo-2q-dh5"/>

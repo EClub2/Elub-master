@@ -24,7 +24,7 @@
 		22156BFC19B4273200D0EEB6 /* TradeOrderDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22156BFB19B4273200D0EEB6 /* TradeOrderDetailCell.m */; };
 		22156C0019B4433200D0EEB6 /* OrderDetailData.m in Sources */ = {isa = PBXBuildFile; fileRef = 22156BFF19B4433200D0EEB6 /* OrderDetailData.m */; };
 		22156C0219B44BA400D0EEB6 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 22156C0119B44BA400D0EEB6 /* logo.png */; };
-		221DA24619B5AE1100C9F747 /* NewluckyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 221DA24519B5AE1100C9F747 /* NewluckyData.m */; };
+		221DA24619B5AE1100C9F747 /* PrizeIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 221DA24519B5AE1100C9F747 /* PrizeIndex.m */; };
 		22212AE4199CB732006A0473 /* hongbao.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22212AE3199CB732006A0473 /* hongbao.jpg */; };
 		222514F1199D914E003DCAC1 /* home_page_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 222514E9199D914E003DCAC1 /* home_page_light@2x.png */; };
 		222514F2199D914E003DCAC1 /* home_page@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 222514EA199D914E003DCAC1 /* home_page@2x.png */; };
@@ -270,8 +270,8 @@
 		22156BFE19B4433200D0EEB6 /* OrderDetailData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailData.h; sourceTree = "<group>"; };
 		22156BFF19B4433200D0EEB6 /* OrderDetailData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailData.m; sourceTree = "<group>"; };
 		22156C0119B44BA400D0EEB6 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		221DA24419B5AE1100C9F747 /* NewluckyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewluckyData.h; sourceTree = "<group>"; };
-		221DA24519B5AE1100C9F747 /* NewluckyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewluckyData.m; sourceTree = "<group>"; };
+		221DA24419B5AE1100C9F747 /* PrizeIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrizeIndex.h; sourceTree = "<group>"; };
+		221DA24519B5AE1100C9F747 /* PrizeIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrizeIndex.m; sourceTree = "<group>"; };
 		22212AE3199CB732006A0473 /* hongbao.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hongbao.jpg; sourceTree = "<group>"; };
 		222514E9199D914E003DCAC1 /* home_page_light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_page_light@2x.png"; sourceTree = "<group>"; };
 		222514EA199D914E003DCAC1 /* home_page@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_page@2x.png"; sourceTree = "<group>"; };
@@ -778,8 +778,8 @@
 		221DA24319B5ADF800C9F747 /* Reward */ = {
 			isa = PBXGroup;
 			children = (
-				221DA24419B5AE1100C9F747 /* NewluckyData.h */,
-				221DA24519B5AE1100C9F747 /* NewluckyData.m */,
+				221DA24419B5AE1100C9F747 /* PrizeIndex.h */,
+				221DA24519B5AE1100C9F747 /* PrizeIndex.m */,
 			);
 			path = Reward;
 			sourceTree = "<group>";
@@ -1792,7 +1792,7 @@
 				227240A019B350C0005210B2 /* RobOrderData.m in Sources */,
 				22082D0319A4962C0088D8C3 /* RobOrderDao.m in Sources */,
 				335D22D719EE46B300EB99B5 /* CurrentGroupCell.m in Sources */,
-				221DA24619B5AE1100C9F747 /* NewluckyData.m in Sources */,
+				221DA24619B5AE1100C9F747 /* PrizeIndex.m in Sources */,
 				33E5644119A889F8002E5D98 /* MenuListViewController.m in Sources */,
 				330FA5DC19B17F070026DFB2 /* UIKeyboardViewController.m in Sources */,
 				227240D019B352F9005210B2 /* RegisterService.m in Sources */,
